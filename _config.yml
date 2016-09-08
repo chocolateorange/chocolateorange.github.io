@@ -30,7 +30,7 @@ sass:
 gems:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-github-metadata
+# - jekyll-github-metadata
   - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-seo-tag
