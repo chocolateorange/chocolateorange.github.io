@@ -1,0 +1,56 @@
+name:
+  chocolateorange
+
+url:
+  https://chocolateorange.github.io
+
+permalink:
+  pretty
+
+timezone:
+  Asia/Tokyo
+
+future:
+  true
+
+markdown:
+  kramdown
+
+highlighter:
+  rouge
+
+kramdown:
+  input:
+    GFM
+
+sass:
+  style:
+    compressed
+
+gems:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
+  - vendor
+
+defaults:
+  - scope:
+      path:
+        ''
+      type:
+        'posts'
+    values:
+      layout:
+        'note'
