@@ -24,6 +24,16 @@ task :preview do
   sh 'bundle exec jekyll serve --drafts --watch'
 end
 
+desc 'publish draft posts'
+task :publish do
+  FileUtils.cp_r('_drafts/.', '_posts/.', {
+    preserve: true,
+  })
+  FileUtils.rm_r(Dir.glob(['_drafts/*', '!_drafts/.gitkeep']), {
+    secure: true,
+  })
+end
+
 desc 'write a new post'
 task :write do
   NOW_DATE = Time.now
