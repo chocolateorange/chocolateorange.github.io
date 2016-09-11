@@ -1,0 +1,224 @@
+---
+---
+@import "common";
+@import "header";
+@import "footer";
+@import "highlight";
+
+.note {
+	.note__inner {
+		margin: 0 auto;
+		padding: 0 1rem;
+		width: 800px;
+
+		@include narrow-width {
+			margin: 0;
+			width: auto;
+		}
+
+		.note__content-area.content-area {
+			.content-area__title {
+				color: #aaaaff;
+				font-weight: lighter;
+				margin: 0;
+
+				@include more-narrow-width {
+					text-align: center;
+				}
+			}
+
+			div {
+				.content-area__pubdate {
+					color: #666666;
+					font-family: $fonts-en;
+					font-size: 80%;
+					margin-right: 0.5rem;
+					text-shadow: 0 1px 0 white;
+
+					&::before {
+						margin-right: 3px;
+					}
+
+					@include more-narrow-width {
+						display: block;
+						margin-right: 0;
+						margin-top: 0.5rem;
+						text-align: center;
+					}
+				}
+
+				.content-area__tags {
+					display: inline;
+					margin: 0 0.5rem 0 0;
+					padding: 0;
+
+					@include more-narrow-width {
+						display: block;
+						margin-right: 0;
+						margin-top: 0.5rem;
+						text-align: center;
+					}
+
+					.tag {
+						display: inline;
+						list-style-type: none;
+						margin: 1rem 0 0 0;
+						padding: 0;
+						.tag__link {
+							&:link, &:visited {
+								color: #666666;
+								text-decoration: none;
+							}
+							&:hover, &:active {
+								text-decoration: underline;
+							}
+						}
+						.tag__text {
+							display: inline;
+							font-family: $fonts-en;
+							font-size: 80%;
+							text-shadow: 0 1px 0 white;
+
+							&::before {
+								margin-right: 3px;
+							}
+						}
+					}
+				}
+
+				.content-area__meta.meta {
+					display: inline;
+
+					@include more-narrow-width {
+						display: block;
+						margin-top: 0.5rem;
+						text-align: center;
+					}
+
+					.meta__link {
+						font-family: $fonts-en;
+						font-size: 80%;
+						font-weight: lighter;
+						text-shadow: 0 1px 0 white;
+
+						&:link, &:visited {
+							color: #ff99ff;
+							text-decoration: none;
+						}
+						&:hover, &:active {
+							text-decoration: underline;
+						}
+					}
+				}
+
+				.content-area__content {
+					color: #666666;
+					margin-top: 3rem;
+
+					// #, ##, ###, ####, #####, ######
+					h1, h2, h3, h4, h5, h6 {
+						border-bottom: 1px solid #cccccc;
+						font-weight: lighter;
+						margin: 3rem 0 1rem 0;
+					}
+
+					// [link](url)
+					a:link, a:visited {
+						color: #aaaaff;
+						text-decoration: none;
+					}
+					a:hover, a:active {
+						text-decoration: underline;
+					}
+
+					// - 1
+					// - 2
+					//
+					// * 1
+					// * 2
+					ul {
+						list-style-type: circle;
+					}
+
+					// ---
+					hr {
+						border: 0;
+						border-top: 1px solid #cccccc;
+						margin: 2rem 0;
+					}
+
+					// >
+					blockquote {
+						background-color: #f0f0f0;
+						border: 1px solid #cccccc;
+						border-radius: 3px;
+						margin: 0;
+						padding: 0.3rem 0.5rem;
+						position: relative;
+
+						p {
+							margin: 0;
+						}
+					}
+
+					// |column1|column2|column3|
+					// |-------|-------|-------|
+					// |column1|column2|column3|
+					// |column1|column2|column3|
+					table {
+						border: 1px solid #cccccc;
+						border-collapse: collapse;
+
+						th, td {
+							border: 1px solid #cccccc;
+							padding: 0 0.2rem;
+						}
+					}
+
+					// `code`
+					code.highlighter-rouge {
+						background-color: #f0f0f0;
+						border-radius: 3px;
+						color: #000000;
+						font-family: $fonts-code;
+						padding: 0.2rem 0.2rem 0 0.2rem;
+					}
+
+					// ```language
+					// ```
+					// or
+					// {% highlight language %}
+					// {% endhighlight %}
+					.highlight {
+						background-color: #f0f0f0;
+						border: 1px solid #cccccc;
+						border-radius: 5px;
+						color: #000000;
+						margin: 0;
+						overflow: scroll;
+						padding: 0.3rem 0.5rem;
+
+						pre {
+							margin: 0;
+						}
+
+						code {
+							font-family: $fonts-code;
+							@include highlight;
+						}
+					}
+
+					div.highlighter-rouge, figure.highlight {
+						margin: 1rem 0;
+					}
+
+					// any embed content
+					iframe {
+						display: block;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
