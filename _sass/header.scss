@@ -1,0 +1,40 @@
+@import "common";
+
+.header {
+	padding: 2rem 0 5rem 0;
+
+	.header__inner {
+		box-sizing: border-box;
+		margin: 0 auto;
+		width: 1000px;
+
+		@include narrow-width {
+			margin: 0;
+			width: auto;
+		}
+
+		.header__title.title {
+			text-align: center;
+
+			.title__link {
+				transition: color 0.2s ease 0s;
+
+				&:link, &:visited {
+					color: #aaaaff;
+					text-decoration: none;
+				}
+				&:hover, &:active {
+					color: #ff99ff;
+				}
+			}
+
+			.title__text {
+				display: inline;
+				font-family: $fonts-title;
+				font-weight: lighter;
+				letter-spacing: 0.05rem;
+				margin: 0;
+			}
+		}
+	}
+}
