@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    <link rel="stylesheet" href="/css/note.css">
+  </head>
+  <body>
+    {% include analyzation.html %}
+
+    {% include header.html %}
+
+    <main class="note" role="main">
+      <div class="note__inner">
+
+        <div class="note__content-area content-area">
+          <h2 class="content-area__title">{{ page.title }}</h2>
+          <div class="">
+            <time class="content-area__pubdate"><!--
+              -->{{ page.date | split:" " | first }}<!--
+            --></time>
+
+            {% if page.tags %}
+            <ul class="content-area__tags">
+              {% assign tags = page.tags | sort %}
+              {% for tag in tags %}
+                {% assign name = tag %}
+                <li class="tag">
+                  <a class="tag__link" href="/tag/?q={{ name }}">
+                    <span class="tag__text ion-ios-pricetag-outline"><!--
+                      -->{{ name }}<!--
+                    --></span><!--
+                  --></a>
+                </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="content-area__meta meta">
+              {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
+              <span class="meta__blob">
+                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}">Blob</a>
+              </span>
+              <span class="meta__blame">
+                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}">Blame</a>
+              </span>
+              <span class="meta__history">
+                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}">History</a>
+              </span>
+            </div>
+
+            <section class="content-area__content">
+              {{ content }}
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>
