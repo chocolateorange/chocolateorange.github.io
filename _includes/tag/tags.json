@@ -1,0 +1,12 @@
+{% capture cache %}
+  {% assign result = nil %}
+  {% assign results = nil %}
+
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+    {% assign name = tag[0] %}
+    {% capture results %}{{ '' | append:name | append:',' | append:results }}{% endcapture %}
+  {% endfor %}
+
+  {% capture result %}{{ results | split:',' | sort | uniq | jsonify }}{% endcapture %}
+{% endcapture %}{% assign cache = nil %}{{ result }}{% assign result = nil %}
