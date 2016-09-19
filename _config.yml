@@ -43,7 +43,11 @@ exclude:
   - LICENSE
   - README.md
   - Rakefile
+  - node_modules
+  - package.json
+  - sources
   - vendor
+  - webpack.config.coffee
 
 defaults:
   - scope:
