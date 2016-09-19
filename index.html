@@ -25,7 +25,7 @@
                 {% assign link_class = 'note__link' %}
               {% endif %}
               <a class="{{ link_class }}" href="{{ post.url }}">
-                <h1 class="note__title">{{ post.title }}</h1>
+                <h2 class="note__title">{{ post.title }}</h2>
                 <time class="note__pubdate ion-ios-clock-outline"><!--
                   -->{{ post.date | split:" " | first }}<!--
                 --></time>
