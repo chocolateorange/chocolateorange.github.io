@@ -55,7 +55,6 @@ task :write do
     open(markdown = file, 'w') do |file|
       file << ~<<-TEXT
       ---
-      date:
       tags:
       title:
       ---
