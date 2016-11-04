@@ -38,22 +38,27 @@ desc 'write a new post'
 task :write do
   NOW_DATE = Time.now
 
-  DIR_NAME = "_drafts/#{NOW_DATE.strftime('%Y/%m')}"
-  FILE_NAME = NOW_DATE.strftime('%F')
+  DIR_NAME = NOW_DATE.strftime('%Y/%m')
+  FILE_PREFIX = NOW_DATE.strftime('%F')
 
-  FileUtils.mkdir_p(DIR_NAME, {
-    mode: 0755,
-  })
-
-  markdown = nil
+  file = nil
 
   (1...100).each do |i|
-    file = "#{DIR_NAME}/#{FILE_NAME}-#{sprintf('%02d', i)}.md"
+    number = sprintf('%02d', i)
 
-    next if File.exist?(file)
+    next if [
+      "_drafts/#{DIR_NAME}/#{FILE_PREFIX}-#{number}.md",
+      "_posts/#{DIR_NAME}/#{FILE_PREFIX}-#{number}.md",
+    ].any? {|f| File.exist?(f)}
 
-    open(markdown = file, 'w') do |file|
-      file << ~<<-TEXT
+    FILE_PATH = "_drafts/#{DIR_NAME}/#{FILE_PREFIX}-#{number}.md"
+
+    FileUtils.mkdir_p(File.dirname(FILE_PATH), {
+      mode: 0755,
+    })
+
+    open(file = FILE_PATH, 'w') do |f|
+      f << ~<<-TEXT
       ---
       tags:
       title:
@@ -64,5 +69,5 @@ task :write do
     break
   end
 
-  sh "$EDITOR #{markdown}" if not markdown.nil?
+  sh "$EDITOR #{file}" if not file.nil?
 end
