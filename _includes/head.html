@@ -1,5 +1,23 @@
 {% include meta.html %}
 {% seo %}
 {% feed_meta %}
-<link rel="preload" as="style" type="text/css" onload="this.rel='stylesheet'" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="preload" as="style" type="text/css" onload="this.rel='stylesheet'" crossorigin href="https://fonts.googleapis.com/css?family=Poiret+One">
+<link class="js-web-fonts" rel="preload" as="style" type="text/css" onload="this.rel='stylesheet'" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link class="js-web-fonts" rel="preload" as="style" type="text/css" onload="this.rel='stylesheet'" crossorigin href="https://fonts.googleapis.com/css?family=Poiret+One">
+<script>
+  (function(){
+    'use strict';
+
+    var link = document.createElement('link');
+
+    if (link.relList && link.relList.supports && link.relList.supports('preload')) {
+      return;
+    }
+
+    var webfonts = document.querySelectorAll('.js-web-fonts'),
+        i, len;
+
+    for (i = 0, len = webfonts.length; i < len; ++i) {
+      webfonts[i].rel = 'stylesheet';
+    }
+  }());
+</script>
