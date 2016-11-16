@@ -45,9 +45,10 @@ exclude:
   - Rakefile
   - node_modules
   - package.json
-  - sources
+  - javascript
   - vendor
-  - webpack.config.coffee
+  - webpack.config.includes.coffee
+  - webpack.config.scripts.coffee
 
 defaults:
   - scope:

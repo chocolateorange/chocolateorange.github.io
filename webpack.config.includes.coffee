@@ -9,13 +9,15 @@ module.exports =
   target: 'web'
 
   entry:
-    tag: './sources/tag/index.js'
+    preload: './javascript/includes/preload.js'
 
   output:
-    path: './js/'
+    path: './_includes/'
     publicPath: './'
     filename: '[name].js'
     chunkFilename: 'chunk-[id]-[hash].js'
+    library: ['[name]']
+    libraryTarget: 'var'
 
   resolveLoader:
     root: path.join(__dirname, 'node_modules')
