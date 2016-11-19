@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "compile": "run-p -cln 'webpack-compile:*'",
     "develop": "run-p -cln 'webpack-develop:*'",
     "minify": "run-p -cln 'webpack-minify:*'",
     "textlint-fix": "npm run textlint -- --fix",
