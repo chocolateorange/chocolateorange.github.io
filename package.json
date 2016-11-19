@@ -4,6 +4,7 @@
     "compile": "run-p -cln 'webpack-compile:*'",
     "develop": "run-p -cln 'webpack-develop:*'",
     "minify": "run-p -cln 'webpack-minify:*'",
+    "test": "npm run textlint",
     "textlint-fix": "npm run textlint -- --fix",
     "textlint": "textlint ./_drafts ./_posts",
     "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
