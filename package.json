@@ -3,6 +3,8 @@
   "scripts": {
     "develop": "run-p -cln 'webpack-develop:*'",
     "minify": "run-p -cln 'webpack-minify:*'",
+    "textlint-fix": "npm run textlint -- --fix",
+    "textlint": "textlint ./_drafts ./_posts",
     "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
     "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.coffee",
     "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
@@ -27,6 +29,8 @@
     "coffee-script": "^1.10.0",
     "html-loader": "^0.4.4",
     "npm-run-all": "^3.1.1",
+    "textlint": "^7.1.4",
+    "textlint-rule-preset-ja-technical-writing": "^1.0.0",
     "uglify-save-license": "^0.4.1",
     "webpack": "^1.13.2"
   }
