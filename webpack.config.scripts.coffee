@@ -34,7 +34,6 @@ module.exports =
     extensions: [
       ''
       '.js'
-      '.json'
       '.html'
     ]
     modulesDirectories: [
