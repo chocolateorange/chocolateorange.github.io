@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "develop": "run-p -cln webpack-develop:*",
-    "minify": "run-p -cln webpack-minify:*",
+    "develop": "run-p -cln 'webpack-develop:*'",
+    "minify": "run-p -cln 'webpack-minify:*'",
     "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
     "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.coffee",
     "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
