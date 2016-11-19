@@ -1,3 +1,5 @@
+import assert from 'assert';
+
 /**
  * fallback <link rel="preload">
  *
@@ -5,6 +7,9 @@
  * @param {String} [rel]
  */
 function fallbackPreload(selector, rel = 'stylesheet') {
+  assert(Object.prototype.toString.call(selector) === '[object String]');
+  assert(Object.prototype.toString.call(rel) === '[object String]');
+
   let link = document.createElement('link');
 
   if (
