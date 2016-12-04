@@ -4,6 +4,60 @@
 @import "header";
 @import "footer";
 
+.links-area {
+	margin-bottom: 3rem;
+	text-align: center;
+
+	.links-area__inner {
+		.links-area__links {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			&.open::after {
+				background-color: #f0f0ff;
+				content: "";
+				display: inline-block;
+				height: 10px;
+				-webkit-transform: translateY(110%) rotate(45deg);
+				-moz-transform: translateY(110%) rotate(45deg);
+				transform: translateY(110%) rotate(45deg);
+				width: 10px;
+			}
+
+			.link__item {
+				.link__link {
+				}
+				.link__text {
+					&.ion-social-github {
+						color: #000000;
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+
+		.link-area {
+			background-color: #f0f0ff;
+			border-bottom: 1px solid #ddddff;
+			padding: 0.5rem 0;
+
+			dl { margin: 0; }
+
+			.link-area__links {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				.link__item {
+					.link__link {
+					}
+				}
+			}
+		}
+	}
+}
+
 .index {
 	margin: 0;
 
