@@ -9,7 +9,8 @@ module.exports =
   target: 'web'
 
   entry:
-    tag: './javascript/scripts/tag/index.js'
+    'error-track': './javascript/scripts/error-track/index.js'
+    'tag': './javascript/scripts/tag/index.js'
 
   output:
     path: './js/'
