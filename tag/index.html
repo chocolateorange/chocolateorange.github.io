@@ -5,6 +5,7 @@
   <head>
     {% include head.html %}
     <link rel="stylesheet" href="/css/tag.css">
+    {% include analyzation.html %}
     <script id="json-tags" type="application/json">
       {"tags": {% include tag/tags.json %}}
     </script>
@@ -14,8 +15,6 @@
     <script async src="/js/tag.js"></script>
   </head>
   <body>
-    {% include analyzation.html %}
-
     {% include header.html %}
 
     <main class="tag" role="main">
