@@ -3,4 +3,4 @@
  * https://github.com/chocolateorange/chocolateorange.github.io
  * Released under the MIT license.
  */
-!function(e){function n(r){if(t[r])return t[r].exports;var o=t[r]={exports:{},id:r,loaded:!1};return e[r].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var t={};return n.m=e,n.c=t,n.p="./",n(0)}([function(e,n){"use strict";function t(e){window.ga&&window.ga("send","exception",{exDescription:e.message+"\n"+e.stack,exFatal:!0})}window.addEventListener("error",t,!1)}]);
+!function(e){function n(r){if(o[r])return o[r].exports;var t=o[r]={exports:{},id:r,loaded:!1};return e[r].call(t.exports,t,t.exports,n),t.loaded=!0,t.exports}var o={};return n.m=e,n.c=o,n.p="./",n(0)}([function(e,n){"use strict";function o(e){window.ga&&window.ga("send","exception",{exDescription:"filename: "+e.filename+"\n"+("lineno: "+e.lineno+"\n")+("colno: "+e.colno+"\n")+("message: "+e.message+"\n")+("stack: "+(e.error&&e.error.stack)),exFatal:!0})}window.addEventListener("error",o,!1)}]);
