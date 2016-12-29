@@ -1,11 +1,16 @@
 /**
  * handler for onerror
  *
- * @param {Error} err
+ * @param {Event} event
  */
-function onError(err) {
+function onError(event) {
   window.ga && window.ga('send', 'exception', {
-    exDescription: err.message + '\n' + err.stack,
+    exDescription:
+      `filename: ${event.filename}\n` +
+      `lineno: ${event.lineno}\n` +
+      `colno: ${event.colno}\n` +
+      `message: ${event.message}\n` +
+      `stack: ${event.error && event.error.stack}`,
     exFatal: true,
   });
 }
