@@ -13,6 +13,17 @@
     <main class="index" role="main">
       <div class="index__inner clearfix">
 
+        <div class="index__search-area search-area">
+          <h2 class="search-area__title">search</h2>
+          <form class="search-area__form" action="https://www.google.com/search" method="GET">
+            <input type="hidden" name="as_sitesearch" value="chocolateorange.github.io">
+            <input class="search-area__text" type="search" name="as_q">
+            <label class="search-area__icon ion-ios-search">
+              <input class="search-area__submit" type="submit" value="search">
+            </label>
+          </form>
+        </div>
+
         <nav class="index__notes-area notes-area">
           <h2 class="notes-area__title">notes</h2>
           <ul class="notes-area__notes">
