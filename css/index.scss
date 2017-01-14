@@ -18,6 +18,52 @@
 			width: auto;
 		}
 
+		.index__search-area.search-area {
+			box-sizing: border-box;
+			float: right;
+			margin: 0 0 1rem 20px;
+			width: 300px - 20px;
+
+			@include narrow-width {
+				box-sizing: content-box;
+				float: none;
+				margin: 0 0 1rem 0;
+				width: auto;
+			}
+
+			.search-area__title {
+				color: #ff99ff;
+				font-family: $fonts-title;
+				font-weight: lighter;
+				margin: 0;
+				text-align: center;
+			}
+
+			.search-area__form {
+				margin-top: 1rem;
+			}
+
+			.search-area__text {
+				width: 280px - 20px;
+
+				@include narrow-width {
+					width: 100%;
+				}
+			}
+
+			.search-area__icon {
+				cursor: pointer;
+
+				@include narrow-width {
+					display: none;
+				}
+			}
+
+			.search-area__submit {
+				display: none;
+			}
+		}
+
 		.index__notes-area.notes-area {
 			box-sizing: border-box;
 			float: left;
