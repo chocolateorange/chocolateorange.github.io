@@ -5,7 +5,7 @@
     "develop": "run-p -cln 'webpack-develop:*'",
     "eslint": "eslint ./javascript",
     "minify": "run-p -cln 'webpack-minify:*'",
-    "stylelint": "find ./css ./_sass -name '*.scss' | xargs -n 1 -I % bash -c 'grep -v ^---$ % | stylelint --stdin-filename $(basename %)'",
+    "stylelint": "find ./css ./_sass -name '*.scss' | xargs -n 1 -I % bash -c 'grep -v ^---$ % | stylelint --stdin-filename %'",
     "test": "run-s textlint eslint stylelint",
     "textlint": "textlint ./_drafts ./_posts",
     "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
