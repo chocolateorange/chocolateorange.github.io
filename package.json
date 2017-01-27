@@ -1,22 +1,4 @@
 {
-  "private": true,
-  "scripts": {
-    "compile": "run-p -cln 'webpack-compile:*'",
-    "develop": "run-p -cln 'webpack-develop:*'",
-    "eslint": "eslint ./javascript",
-    "fixpack": "fixpack",
-    "minify": "run-p -cln 'webpack-minify:*'",
-    "stylelint": "find ./css ./_sass -type f -name '*.scss' -print0 | xargs -0 -n 1 -I % bash -c 'grep -v ^---$ % | stylelint --stdin-filename %'",
-    "test": "run-s textlint eslint stylelint",
-    "textlint": "textlint ./_drafts ./_posts",
-    "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
-    "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.coffee",
-    "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
-    "webpack-develop:scripts": "npm run webpack-compile:scripts -- --devtool inline-source-map --watch",
-    "webpack-minify:includes": "NODE_ENV=production npm run webpack-compile:includes -- --optimize-minimize",
-    "webpack-minify:scripts": "NODE_ENV=production npm run webpack-compile:scripts -- --optimize-minimize",
-    "webpack": "webpack --colors --display-error-details --progress --module-bind json"
-  },
   "dependencies": {
     "domready": "^1.0.8",
     "lodash": "^4.15.0"
@@ -46,5 +28,23 @@
     "textlint-rule-preset-ja-technical-writing": "^1.0.0",
     "uglify-save-license": "^0.4.1",
     "webpack": "^1.13.2"
+  },
+  "private": true,
+  "scripts": {
+    "compile": "run-p -cln 'webpack-compile:*'",
+    "develop": "run-p -cln 'webpack-develop:*'",
+    "eslint": "eslint ./javascript",
+    "fixpack": "fixpack",
+    "minify": "run-p -cln 'webpack-minify:*'",
+    "stylelint": "find ./css ./_sass -type f -name '*.scss' -print0 | xargs -0 -n 1 -I % bash -c 'grep -v ^---$ % | stylelint --stdin-filename %'",
+    "test": "run-s textlint eslint stylelint",
+    "textlint": "textlint ./_drafts ./_posts",
+    "webpack": "webpack --colors --display-error-details --progress --module-bind json",
+    "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.coffee",
+    "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.coffee",
+    "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
+    "webpack-develop:scripts": "npm run webpack-compile:scripts -- --devtool inline-source-map --watch",
+    "webpack-minify:includes": "NODE_ENV=production npm run webpack-compile:includes -- --optimize-minimize",
+    "webpack-minify:scripts": "NODE_ENV=production npm run webpack-compile:scripts -- --optimize-minimize"
   }
 }
