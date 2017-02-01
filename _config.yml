@@ -47,8 +47,8 @@ exclude:
   - package.json
   - javascript
   - vendor
-  - webpack.config.includes.coffee
-  - webpack.config.scripts.coffee
+  - webpack.config.includes.js
+  - webpack.config.scripts.js
 
 defaults:
   - scope:
