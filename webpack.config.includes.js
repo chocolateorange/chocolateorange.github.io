@@ -1,91 +1,99 @@
-path = require 'path'
+'use strict';
 
-webpack = require 'webpack'
+const path = require('path');
 
-module.exports =
+const webpack = require('webpack')
 
-  context: __dirname
+module.exports = {
 
-  target: 'web'
+  context: __dirname,
 
-  entry:
-    preload: './javascript/includes/preload.js'
+  target: 'web',
 
-  output:
-    path: './_includes/'
-    publicPath: './'
-    filename: '[name].js'
-    chunkFilename: 'chunk-[id]-[hash].js'
-    library: ['[name]']
-    libraryTarget: 'var'
+  entry: {
+    preload: './javascript/includes/preload.js',
+  },
 
-  resolveLoader:
-    root: path.join(__dirname, 'node_modules')
+  output: {
+    path: './_includes/',
+    publicPath: './',
+    filename: '[name].js',
+    chunkFilename: 'chunk-[id]-[hash].js',
+    library: ['[name]'],
+    libraryTarget: 'var',
+  },
 
-  module:
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules'),
+  },
+
+  module: {
     loaders: [
-      { test: /\.html?$/, exclude: /node_modules/, loader: 'html'  }
-      { test: /\.js$/,    exclude: /node_modules/, loader: 'babel' }
-    ]
+      { test: /\.html?$/, exclude: /node_modules/, loader: 'html'  },
+      { test: /\.js$/,    exclude: /node_modules/, loader: 'babel' },
+    ],
+  },
 
-  node:
-    Buffer: false
-    process: false
+  node: {
+    Buffer: false,
+    process: false,
+  },
 
-  resolve:
+  resolve: {
     extensions: [
-      ''
-      '.js'
-      '.html'
-    ]
+      '',
+      '.js',
+      '.html',
+    ],
     modulesDirectories: [
-      'node_modules'
-    ]
+      'node_modules',
+    ],
+  },
 
   plugins: [
-    new webpack.NoErrorsPlugin
-    new webpack.IgnorePlugin(/vertx/)
-    new webpack.optimize.OccurenceOrderPlugin
-    new webpack.optimize.DedupePlugin
-    new webpack.optimize.AggressiveMergingPlugin
+    new webpack.NoErrorsPlugin,
+    new webpack.IgnorePlugin(/vertx/),
+    new webpack.optimize.OccurenceOrderPlugin,
+    new webpack.optimize.DedupePlugin,
+    new webpack.optimize.AggressiveMergingPlugin,
   ].concat(
-    if process.argv.some (arg) ->
-      /^(?:-p|--optimize-minimize)$/.test(arg)
-    then [
-    # new webpack.DefinePlugin(
-    # )
-      new webpack.optimize.UglifyJsPlugin(
-        compress:
+    (process.argv.some(arg => /^(?:-p|--optimize-minimize)$/.test(arg))) ? [
+      // new webpack.DefinePlugin(
+      // ),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
           pure_funcs: [
-            'log'
-          ]
-        output:
-          comments: require('uglify-save-license')
-      )
-    ]
-    else [
-      new webpack.DefinePlugin(
-        log: ->
-          if console?
-            # for IE8 and IE9
-            if typeof console.log is 'object'
-              Function::apply.call(console.log, console, arguments)
-            # for other browsers
-            else
-              console.log.apply(console, arguments)
-          return
-      )
+            'log',
+          ],
+        },
+        output: {
+          comments: require('uglify-save-license'),
+        },
+      }),
+    ] : [
+      new webpack.DefinePlugin({
+        log: function() {
+          if (typeof console !== 'undefined') {
+            if (typeof console.log === 'object') {
+              // for IE8 and IE9
+              Function.prototype.apply.call(console.log, console, arguments);
+            } else {
+              // for other browsers
+              console.log.apply(console, arguments);
+            }
+          }
+        },
+      }),
     ]
   ).concat([
-    new webpack.BannerPlugin(
-      '''
-      @license Copyright(c) 2016 sasa+1
-      https://github.com/chocolateorange/chocolateorange.github.io
-      Released under the MIT license.
-      '''
-    ,
-      options:
-        raw: false
-        entryOnly: true
-    )
-  ])
+    new webpack.BannerPlugin([
+      '@license Copyright(c) 2016 sasa+1',
+      'https://github.com/chocolateorange/chocolateorange.github.io',
+      'Released under the MIT license.',
+    ].join('\n'), {
+      raw: false,
+      entryOnly: true,
+    }),
+  ]),
+
+};
