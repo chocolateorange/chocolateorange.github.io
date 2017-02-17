@@ -1,50 +1,50 @@
 $fonts-en:
-	Verdana,
-	sans-serif;
+  Verdana,
+  sans-serif;
 
 $fonts-ja:
-	"MigMix 1p", "migmix-1p",
-	"Mplus 1p",
-	"ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
-	"メイリオ", Meiryo,
-	sans-serif;
+  "MigMix 1p", "migmix-1p",
+  "Mplus 1p",
+  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
+  "メイリオ", Meiryo,
+  sans-serif;
 
 $fonts-code:
-	Inconsolata,
-	Consolas,
-	Menlo,
-	Monaco,
-	"MigMix 1m", "migmix-1m",
-	monospace;
+  Inconsolata,
+  Consolas,
+  Menlo,
+  Monaco,
+  "MigMix 1m", "migmix-1m",
+  monospace;
 
 $fonts-title:
-	"Poiret One",
-	Verdana,
-	sans-serif;
+  "Poiret One",
+  Verdana,
+  sans-serif;
 
 body {
-	font-family: $fonts-ja;
-	margin: 0;
+  font-family: $fonts-ja;
+  margin: 0;
 }
 
 main {
-	display: block;
+  display: block;
 }
 
 .clearfix::after {
-	content: "";
-	clear: both;
-	display: block;
+  content: "";
+  clear: both;
+  display: block;
 }
 
 @mixin narrow-width {
-	@media only screen and (max-width: 1000px - 1px) {
-		@content;
-	}
+  @media only screen and (max-width: 1000px - 1px) {
+    @content;
+  }
 }
 
 @mixin more-narrow-width {
-	@media only screen and (max-width: 500px - 1px) {
-		@content;
-	}
+  @media only screen and (max-width: 500px - 1px) {
+    @content;
+  }
 }

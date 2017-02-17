@@ -6,219 +6,234 @@
 @import "highlight";
 
 .note {
-	.note__inner {
-		margin: 0 auto;
-		padding: 0 1rem;
-		width: 800px;
+  .note__inner {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 800px;
 
-		@include narrow-width {
-			margin: 0;
-			width: auto;
-		}
+    @include narrow-width {
+      margin: 0;
+      width: auto;
+    }
 
-		.note__content-area.content-area {
-			.content-area__title {
-				color: #aaaaff;
-				font-weight: normal;
-				margin: 0;
+    .note__content-area.content-area {
+      .content-area__title {
+        color: #aaf;
+        font-weight: normal;
+        margin: 0;
 
-				@include more-narrow-width {
-					text-align: center;
-				}
-			}
+        @include more-narrow-width {
+          text-align: center;
+        }
+      }
 
-			div {
-				.content-area__pubdate {
-					color: #666666;
-					font-family: $fonts-en;
-					font-size: 80%;
-					margin-right: 0.5rem;
-					text-shadow: 0 1px 0 white;
+      div {
+        .content-area__pubdate {
+          color: #666;
+          font-family: $fonts-en;
+          font-size: 80%;
+          margin-right: 0.5rem;
+          text-shadow: 0 1px 0 white;
 
-					&::before {
-						margin-right: 3px;
-					}
+          &::before {
+            margin-right: 3px;
+          }
 
-					@include more-narrow-width {
-						display: block;
-						margin-right: 0;
-						margin-top: 0.5rem;
-						text-align: center;
-					}
-				}
+          @include more-narrow-width {
+            display: block;
+            margin-right: 0;
+            margin-top: 0.5rem;
+            text-align: center;
+          }
+        }
 
-				.content-area__tags {
-					display: inline;
-					margin: 0 0.5rem 0 0;
-					padding: 0;
+        .content-area__tags {
+          display: inline;
+          margin: 0 0.5rem 0 0;
+          padding: 0;
 
-					@include more-narrow-width {
-						display: block;
-						margin-right: 0;
-						margin-top: 0.5rem;
-						text-align: center;
-					}
+          @include more-narrow-width {
+            display: block;
+            margin-right: 0;
+            margin-top: 0.5rem;
+            text-align: center;
+          }
 
-					.tag {
-						display: inline;
-						list-style-type: none;
-						margin: 1rem 0 0 0;
-						padding: 0;
-						.tag__link {
-							&:link, &:visited {
-								color: #666666;
-								text-decoration: none;
-							}
-							&:hover, &:active {
-								text-decoration: underline;
-							}
-						}
-						.tag__text {
-							display: inline;
-							font-family: $fonts-en;
-							font-size: 80%;
-							text-shadow: 0 1px 0 white;
+          .tag {
+            display: inline;
+            list-style-type: none;
+            margin: 1rem 0 0;
+            padding: 0;
 
-							&::before {
-								margin-right: 3px;
-							}
-						}
-					}
-				}
+            .tag__link {
+              &:link,
+              &:visited {
+                color: #666;
+                text-decoration: none;
+              }
 
-				.content-area__meta.meta {
-					display: inline;
+              &:hover,
+              &:active {
+                text-decoration: underline;
+              }
+            }
 
-					@include more-narrow-width {
-						display: block;
-						margin-top: 0.5rem;
-						text-align: center;
-					}
+            .tag__text {
+              display: inline;
+              font-family: $fonts-en;
+              font-size: 80%;
+              text-shadow: 0 1px 0 white;
 
-					.meta__link {
-						font-family: $fonts-en;
-						font-size: 80%;
-						font-weight: lighter;
-						text-shadow: 0 1px 0 white;
+              &::before {
+                margin-right: 3px;
+              }
+            }
+          }
+        }
 
-						&:link, &:visited {
-							color: #ff99ff;
-							text-decoration: none;
-						}
-						&:hover, &:active {
-							text-decoration: underline;
-						}
-					}
-				}
+        .content-area__meta.meta {
+          display: inline;
 
-				.content-area__content {
-					color: #666666;
-					margin-top: 3rem;
+          @include more-narrow-width {
+            display: block;
+            margin-top: 0.5rem;
+            text-align: center;
+          }
 
-					// #, ##, ###, ####, #####, ######
-					h1, h2, h3, h4, h5, h6 {
-						border-bottom: 1px solid #cccccc;
-						font-weight: normal;
-						margin: 3rem 0 1rem 0;
-					}
+          .meta__link {
+            font-family: $fonts-en;
+            font-size: 80%;
+            font-weight: lighter;
+            text-shadow: 0 1px 0 white;
 
-					// [link](url)
-					a:link, a:visited {
-						color: #aaaaff;
-						text-decoration: none;
-					}
-					a:hover, a:active {
-						text-decoration: underline;
-					}
+            &:link,
+            &:visited {
+              color: #f9f;
+              text-decoration: none;
+            }
 
-					// - 1
-					// - 2
-					//
-					// * 1
-					// * 2
-					ul {
-						list-style-type: circle;
-					}
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          }
+        }
 
-					// ---
-					hr {
-						border: 0;
-						border-top: 1px solid #cccccc;
-						margin: 2rem 0;
-					}
+        .content-area__content {
+          color: #666;
+          margin-top: 3rem;
 
-					// >
-					blockquote {
-						background-color: #f0f0f0;
-						border: 1px solid #cccccc;
-						border-radius: 3px;
-						margin: 0;
-						padding: 0.3rem 0.5rem;
-						position: relative;
+          // #, ##, ###, ####, #####, ######
+          /* stylelint-disable-next-line selector-list-comma-newline-after */
+          h1, h2, h3, h4, h5, h6 {
+            border-bottom: 1px solid #ccc;
+            font-weight: normal;
+            margin: 3rem 0 1rem;
+          }
 
-						p {
-							margin: 0;
-						}
-					}
+          // [link](url)
+          a:link,
+          a:visited {
+            color: #aaf;
+            text-decoration: none;
+          }
 
-					// |column1|column2|column3|
-					// |-------|-------|-------|
-					// |column1|column2|column3|
-					// |column1|column2|column3|
-					table {
-						border: 1px solid #cccccc;
-						border-collapse: collapse;
+          a:hover,
+          a:active {
+            text-decoration: underline;
+          }
 
-						th, td {
-							border: 1px solid #cccccc;
-							padding: 0 0.2rem;
-						}
-					}
+          // - 1
+          // - 2
+          //
+          // * 1
+          // * 2
+          ul {
+            list-style-type: circle;
+          }
 
-					// `code`
-					code.highlighter-rouge {
-						background-color: #f0f0f0;
-						border-radius: 3px;
-						color: #000000;
-						font-family: $fonts-code;
-						padding: 0.2rem 0.2rem 0 0.2rem;
-					}
+          // ---
+          hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 2rem 0;
+          }
 
-					// ```language
-					// ```
-					// or
-					// {% highlight language %}
-					// {% endhighlight %}
-					.highlight {
-						background-color: #f0f0f0;
-						border: 1px solid #cccccc;
-						border-radius: 5px;
-						color: #000000;
-						margin: 0;
-						overflow: scroll;
-						padding: 0.3rem 0.5rem;
+          // >
+          blockquote {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 0;
+            padding: 0.3rem 0.5rem;
+            position: relative;
 
-						pre {
-							margin: 0;
-						}
+            p {
+              margin: 0;
+            }
+          }
 
-						code {
-							font-family: $fonts-code;
-							@include highlight;
-						}
-					}
+          // |column1|column2|column3|
+          // |-------|-------|-------|
+          // |column1|column2|column3|
+          // |column1|column2|column3|
+          table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
 
-					div.highlighter-rouge, figure.highlight {
-						margin: 1rem 0;
-					}
+            th,
+            td {
+              border: 1px solid #ccc;
+              padding: 0 0.2rem;
+            }
+          }
 
-					// any embed content
-					iframe {
-						display: block;
-						margin: 0 auto;
-					}
-				}
-			}
-		}
-	}
+          // `code`
+          code.highlighter-rouge {
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            color: #000;
+            font-family: $fonts-code;
+            padding: 0.2rem 0.2rem 0;
+          }
+
+          // ```language
+          // ```
+          // or
+          // {% highlight language %}
+          // {% endhighlight %}
+          .highlight {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #000;
+            margin: 0;
+            overflow: scroll;
+            padding: 0.3rem 0.5rem;
+
+            pre {
+              margin: 0;
+            }
+
+            code {
+              font-family: $fonts-code;
+
+              @include highlight;
+            }
+          }
+
+          div.highlighter-rouge,
+          figure.highlight {
+            margin: 1rem 0;
+          }
+
+          // any embed content
+          iframe {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,71 +1,77 @@
 @import "common";
 
 .footer {
-	padding: 5rem 0 2rem 0;
+  padding: 5rem 0 2rem;
 
-	.footer__inner {
-		box-sizing: border-box;
-		margin: 0 auto;
-		width: 1000px;
+  .footer__inner {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 1000px;
 
-		@include narrow-width {
-			margin: 0;
-			width: auto;
-		}
+    @include narrow-width {
+      margin: 0;
+      width: auto;
+    }
 
-		.footer__links.links {
-			.links__list.list {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-				text-align: center;
+    .footer__links.links {
+      .links__list.list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
 
-				.list__item.item {
-					display: inline;
-					margin-right: 10px;
+        .list__item.item {
+          display: inline;
+          margin-right: 10px;
 
-					&:last-child {
-						margin-right: 0;
-					}
+          &:last-child {
+            margin-right: 0;
+          }
 
-					.item__link {
-						font-size: 2rem;
-					}
+          .item__link {
+            font-size: 2rem;
+          }
 
-					.item__feed {
-						&:link, &:visited {
-							color: #fe9507;
-						}
-					}
-					.item__github {
-						&:link, &:visited {
-							color: #000000;
-						}
-					}
-				}
-			}
-		}
+          .item__feed {
+            &:link,
+            &:visited {
+              color: #fe9507;
+            }
+          }
 
-		.footer__copyright.copyright {
-			text-align: center;
+          .item__github {
+            &:link,
+            &:visited {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
 
-			.copyright__text {
-				color: #666666;
-				font-family: $fonts-en;
-				font-size: 70%;
-			}
+    .footer__copyright.copyright {
+      text-align: center;
 
-			.copyright__link {
-				transition: color 0.2s ease 0s;
+      .copyright__text {
+        color: #666;
+        font-family: $fonts-en;
+        font-size: 70%;
+      }
 
-				&:link, &:visited {
-					color: #aaaaff;
-					text-decoration: none;
-				}
-				&:hover, &:active {
-					color: #ff99ff;
-				}
-			}
-		}
-	}
+      .copyright__link {
+        transition: color 0.2s ease 0s;
+
+        &:link,
+        &:visited {
+          color: #aaf;
+          text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+          color: #f9f;
+        }
+      }
+    }
+  }
 }

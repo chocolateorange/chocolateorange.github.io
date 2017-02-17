@@ -5,173 +5,183 @@
 @import "footer";
 
 .tag {
-	.tag__inner {
-		margin: 0 auto;
-		padding: 0 1rem;
-		width: 1000px;
+  .tag__inner {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 1000px;
 
-		@include narrow-width {
-			box-sizing: border-box;
-			margin: 0;
-			width: auto;
-		}
+    @include narrow-width {
+      box-sizing: border-box;
+      margin: 0;
+      width: auto;
+    }
 
-		.tag__state-area.state-area {
-			box-sizing: border-box;
-			float: left;
-			width: 300px - 20px;
+    .tag__state-area.state-area {
+      box-sizing: border-box;
+      float: left;
+      width: 300px - 20px;
 
-			@include narrow-width {
-				box-sizing: content-box;
-				float: none;
-				width: auto;
-			}
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        width: auto;
+      }
 
-			.state-area__title {
-				color: #ff99ff;
-				font-family: $fonts-title;
-				font-weight: lighter;
-				margin: 0 0 1rem 0;
-				text-align: center;
-			}
-			.state-area__state {
-				margin: 0 0 1rem 0;
+      .state-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0 0 1rem;
+        text-align: center;
+      }
 
-				.state-area__state-title {
-					color: #aaaaff;
-					font-weight: normal;
-					margin: 0;
-					padding: 0.5rem;
-					text-shadow: 0 1px 0 white;
-				}
-				.state-area__state-list.state-list {
-					.state-list__selected,
-					.state-list__unselect {
-						line-height: 1.5;
-						list-style-type: none;
-						margin: 1rem 0 0 0;
-						padding: 0;
+      .state-area__state {
+        margin: 0 0 1rem;
 
-						.tag {
-							display: inline-block;
-							text-align: left;
-							width: 49%;
+        .state-area__state-title {
+          color: #aaf;
+          font-weight: normal;
+          margin: 0;
+          padding: 0.5rem;
+          text-shadow: 0 1px 0 white;
+        }
 
-							@include narrow-width {
-								display: inline;
-							}
+        .state-area__state-list.state-list {
+          .state-list__selected,
+          .state-list__unselect {
+            line-height: 1.5;
+            list-style-type: none;
+            margin: 1rem 0 0;
+            padding: 0;
 
-							.tag__link {
-								&:link, &:visited {
-									color: #666666;
-									text-decoration: none;
-								}
-								&:hover, &:active {
-									text-decoration: underline;
-								}
-							}
-							.tag__text {
-								font-family: $fonts-en;
-								font-size: 80%;
+            .tag {
+              display: inline-block;
+              text-align: left;
+              width: 49%;
 
-								&::before {
-									margin-right: 3px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+              @include narrow-width {
+                display: inline;
+              }
 
-		.tag__notes-area.notes-area {
-			box-sizing: border-box;
-			float: left;
-			margin-left: 20px;
-			width: 700px;
+              .tag__link {
+                &:link,
+                &:visited {
+                  color: #666;
+                  text-decoration: none;
+                }
 
-			@include narrow-width {
-				box-sizing: content-box;
-				float: none;
-				margin-left: 0;
-				margin-top: 3rem;
-				width: auto;
-			}
+                &:hover,
+                &:active {
+                  text-decoration: underline;
+                }
+              }
 
-			.notes-area__title {
-				color: #ff99ff;
-				font-family: $fonts-title;
-				font-weight: lighter;
-				margin: 0 0 1rem 0;
-				text-align: center;
-			}
-			.notes-area__notes {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
+              .tag__text {
+                font-family: $fonts-en;
+                font-size: 80%;
 
-				.note {
-					.note__link {
-						border-radius: 5px;
-						display: block;
-						overflow: hidden;
-						padding: 0.5rem;
-						position: relative;
-						text-decoration: none;
-						transition: background-color 0.1s ease 0s;
+                &::before {
+                  margin-right: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-						&:hover {
-							background-color: #f6f6ff;
-						}
+    .tag__notes-area.notes-area {
+      box-sizing: border-box;
+      float: left;
+      margin-left: 20px;
+      width: 700px;
 
-						&::before {
-							color: #aaaaff;
-							font-size: 8rem;
-							opacity: 0.5;
-							position: absolute;
-							right: 1.5rem;
-						}
-					}
-					.note__title {
-						color: #aaaaff;
-						font-size: 1.2rem;
-						font-weight: normal;
-						margin: 0;
-						text-shadow: 0 1px 0 white;
-					}
-					.note__pubdate {
-						color: #666666;
-						font-family: $fonts-en;
-						font-size: 80%;
-						text-shadow: 0 1px 0 white;
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        margin-left: 0;
+        margin-top: 3rem;
+        width: auto;
+      }
 
-						&::before {
-							margin-right: 3px;
-						}
-					}
-					.note__tags {
-						display: inline;
-						padding: 0;
+      .notes-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0 0 1rem;
+        text-align: center;
+      }
 
-						.tag {
-							display: inline;
-							list-style-type: none;
-							padding: 0;
+      .notes-area__notes {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
 
-							.tag__text {
-								color: #666666;
-								font-family: $fonts-en;
-								font-size: 80%;
-								text-shadow: 0 1px 0 white;
+        .note {
+          .note__link {
+            border-radius: 5px;
+            display: block;
+            overflow: hidden;
+            padding: 0.5rem;
+            position: relative;
+            text-decoration: none;
+            transition: background-color 0.1s ease 0s;
 
-								&::before {
-									margin-right: 3px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+            &:hover {
+              background-color: #f6f6ff;
+            }
+
+            &::before {
+              color: #aaf;
+              font-size: 8rem;
+              opacity: 0.5;
+              position: absolute;
+              right: 1.5rem;
+            }
+          }
+
+          .note__title {
+            color: #aaf;
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin: 0;
+            text-shadow: 0 1px 0 white;
+          }
+
+          .note__pubdate {
+            color: #666;
+            font-family: $fonts-en;
+            font-size: 80%;
+            text-shadow: 0 1px 0 white;
+
+            &::before {
+              margin-right: 3px;
+            }
+          }
+
+          .note__tags {
+            display: inline;
+            padding: 0;
+
+            .tag {
+              display: inline;
+              list-style-type: none;
+              padding: 0;
+
+              .tag__text {
+                color: #666;
+                font-family: $fonts-en;
+                font-size: 80%;
+                text-shadow: 0 1px 0 white;
+
+                &::before {
+                  margin-right: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

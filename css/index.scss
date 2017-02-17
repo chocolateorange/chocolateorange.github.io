@@ -5,218 +5,222 @@
 @import "footer";
 
 .index {
-	margin: 0;
+  margin: 0;
 
-	.index__inner {
-		margin: 0 auto;
-		padding: 0 1rem;
-		width: 1000px;
+  .index__inner {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 1000px;
 
-		@include narrow-width {
-			box-sizing: border-box;
-			margin: 0;
-			width: auto;
-		}
+    @include narrow-width {
+      box-sizing: border-box;
+      margin: 0;
+      width: auto;
+    }
 
-		.index__search-area.search-area {
-			box-sizing: border-box;
-			float: right;
-			margin: 0 0 1rem 20px;
-			width: 300px - 20px;
+    .index__search-area.search-area {
+      box-sizing: border-box;
+      float: right;
+      margin: 0 0 1rem 20px;
+      width: 300px - 20px;
 
-			@include narrow-width {
-				box-sizing: content-box;
-				float: none;
-				margin: 0 0 3rem 0;
-				width: auto;
-			}
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        margin: 0 0 3rem;
+        width: auto;
+      }
 
-			.search-area__title {
-				color: #ff99ff;
-				font-family: $fonts-title;
-				font-weight: lighter;
-				margin: 0;
-				text-align: center;
-			}
+      .search-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0;
+        text-align: center;
+      }
 
-			.search-area__form {
-				margin-top: 1rem;
-			}
+      .search-area__form {
+        margin-top: 1rem;
+      }
 
-			.search-area__text {
-				width: 280px - 20px;
+      .search-area__text {
+        width: 280px - 20px;
 
-				@include narrow-width {
-					width: 100%;
-				}
-			}
+        @include narrow-width {
+          width: 100%;
+        }
+      }
 
-			.search-area__icon {
-				color: #666666;
-				cursor: pointer;
-				text-shadow: 0 1px 0 white;
+      .search-area__icon {
+        color: #666;
+        cursor: pointer;
+        text-shadow: 0 1px 0 white;
 
-				@include narrow-width {
-					display: block;
-					font-size: 1.5rem;
-					margin: 0.5rem auto 0 auto;
-					text-align: center;
-					width: 2rem;
-				}
-			}
+        @include narrow-width {
+          display: block;
+          font-size: 1.5rem;
+          margin: 0.5rem auto 0;
+          text-align: center;
+          width: 2rem;
+        }
+      }
 
-			.search-area__submit {
-				display: none;
-			}
-		}
+      .search-area__submit {
+        display: none;
+      }
+    }
 
-		.index__notes-area.notes-area {
-			box-sizing: border-box;
-			float: left;
-			width: 700px;
+    .index__notes-area.notes-area {
+      box-sizing: border-box;
+      float: left;
+      width: 700px;
 
-			@include narrow-width {
-				box-sizing: content-box;
-				float: none;
-				width: auto;
-			}
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        width: auto;
+      }
 
-			.notes-area__title {
-				color: #ff99ff;
-				font-family: $fonts-title;
-				font-weight: lighter;
-				margin: 0 0 1rem 0;
-				text-align: center;
-			}
+      .notes-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0 0 1rem;
+        text-align: center;
+      }
 
-			.notes-area__notes {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
+      .notes-area__notes {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
 
-				.note {
-					.note__link {
-						border-radius: 5px;
-						display: block;
-						overflow: hidden;
-						padding: 0.5rem;
-						position: relative;
-						text-decoration: none;
-						transition: background-color 0.1s ease 0s;
+        .note {
+          .note__link {
+            border-radius: 5px;
+            display: block;
+            overflow: hidden;
+            padding: 0.5rem;
+            position: relative;
+            text-decoration: none;
+            transition: background-color 0.1s ease 0s;
 
-						&:hover {
-							background-color: #f6f6ff;
-						}
+            &:hover {
+              background-color: #f6f6ff;
+            }
 
-						&::before {
-							color: #aaaaff;
-							font-size: 8rem;
-							opacity: 0.5;
-							position: absolute;
-							right: 1.5rem;
-						}
-					}
+            &::before {
+              color: #aaf;
+              font-size: 8rem;
+              opacity: 0.5;
+              position: absolute;
+              right: 1.5rem;
+            }
+          }
 
-					.note__title {
-						color: #aaaaff;
-						font-size: 1.2rem;
-						font-weight: normal;
-						margin: 0;
-						text-shadow: 0 1px 0 white;
-					}
+          .note__title {
+            color: #aaf;
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin: 0;
+            text-shadow: 0 1px 0 white;
+          }
 
-					.note__pubdate {
-						color: #666666;
-						font-family: $fonts-en;
-						font-size: 80%;
-						text-shadow: 0 1px 0 white;
+          .note__pubdate {
+            color: #666;
+            font-family: $fonts-en;
+            font-size: 80%;
+            text-shadow: 0 1px 0 white;
 
-						&::before {
-							margin-right: 3px;
-						}
-					}
+            &::before {
+              margin-right: 3px;
+            }
+          }
 
-					.note__tags {
-						display: inline;
-						padding: 0;
+          .note__tags {
+            display: inline;
+            padding: 0;
 
-						.tag {
-							display: inline;
-							list-style-type: none;
-							padding: 0;
+            .tag {
+              display: inline;
+              list-style-type: none;
+              padding: 0;
 
-							.tag__text {
-								color: #666666;
-								font-family: $fonts-en;
-								font-size: 80%;
-								text-shadow: 0 1px 0 white;
+              .tag__text {
+                color: #666;
+                font-family: $fonts-en;
+                font-size: 80%;
+                text-shadow: 0 1px 0 white;
 
-								&::before {
-									margin-right: 3px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+                &::before {
+                  margin-right: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-		.index__tags-area.tags-area {
-			box-sizing: border-box;
-			float: right;
-			margin-left: 20px;
-			width: 300px - 20px;
+    .index__tags-area.tags-area {
+      box-sizing: border-box;
+      float: right;
+      margin-left: 20px;
+      width: 300px - 20px;
 
-			@include narrow-width {
-				box-sizing: content-box;
-				float: none;
-				margin-left: 0;
-				margin-top: 3rem;
-				width: auto;
-			}
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        margin-left: 0;
+        margin-top: 3rem;
+        width: auto;
+      }
 
-			.tags-area__title {
-				color: #ff99ff;
-				font-family: $fonts-title;
-				font-weight: lighter;
-				margin: 0;
-				text-align: center;
-			}
+      .tags-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0;
+        text-align: center;
+      }
 
-			.tags-area__tags {
-				line-height: 1.5;
-				list-style-type: none;
-				margin: 1rem 0 0 0;
-				padding: 0;
+      .tags-area__tags {
+        line-height: 1.5;
+        list-style-type: none;
+        margin: 1rem 0 0;
+        padding: 0;
 
-				.tag {
-					display: inline-block;
-					text-align: left;
-					width: 49%;
+        .tag {
+          display: inline-block;
+          text-align: left;
+          width: 49%;
 
-					@include narrow-width {
-						display: inline;
-					}
+          @include narrow-width {
+            display: inline;
+          }
 
-					.tag__link {
-						&:link, &:visited {
-							color: #666666;
-							text-decoration: none;
-						}
-						&:hover, &:active {
-							text-decoration: underline;
-						}
-					}
-					.tag__text {
-						font-family: $fonts-en;
-						font-size: 80%;
+          .tag__link {
+            &:link,
+            &:visited {
+              color: #666;
+              text-decoration: none;
+            }
 
-						&::before {
-							margin-right: 3px;
-						}
-					}
-				}
-			}
-		}
-	}
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          }
+
+          .tag__text {
+            font-family: $fonts-en;
+            font-size: 80%;
+
+            &::before {
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
