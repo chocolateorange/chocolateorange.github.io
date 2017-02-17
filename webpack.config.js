@@ -83,6 +83,9 @@ module.exports = function(env) {
         library: ['[name]'],
         libraryTarget: 'var',
       },
+      module: {
+        exprContextCritical: false,
+      },
     }),
     Object.assign({}, baseConfig, {
       entry: {
