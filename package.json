@@ -31,20 +31,17 @@
   },
   "private": true,
   "scripts": {
-    "compile": "run-p -cln 'webpack-compile:*'",
-    "develop": "run-p -cln 'webpack-develop:*'",
+    "compile": "npm run webpack:compile",
+    "develop": "npm run webpack:develop",
     "eslint": "eslint ./javascript",
     "fixpack": "fixpack",
-    "minify": "run-p -cln 'webpack-minify:*'",
+    "minify": "npm run webpack:minify",
     "stylelint": "find ./css ./_sass -type f -name '*.scss' -print0 | xargs -0 -n 1 -I % bash -c 'grep -v ^---$ % | stylelint --stdin-filename %'",
     "test": "run-s textlint eslint stylelint",
     "textlint": "textlint ./_drafts ./_posts",
     "webpack": "webpack --colors --display-error-details --progress --module-bind json",
-    "webpack-compile:includes": "npm run webpack -- --config webpack.config.includes.js",
-    "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.js",
-    "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
-    "webpack-develop:scripts": "npm run webpack-compile:scripts -- --devtool inline-source-map --watch",
-    "webpack-minify:includes": "NODE_ENV=production npm run webpack-compile:includes -- --optimize-minimize",
-    "webpack-minify:scripts": "NODE_ENV=production npm run webpack-compile:scripts -- --optimize-minimize"
+    "webpack:compile": "npm run webpack",
+    "webpack:develop": "npm run webpack -- --watch",
+    "webpack:minify": "NODE_ENV=production npm run webpack:compile -- --optimize-minimize"
   }
 }
