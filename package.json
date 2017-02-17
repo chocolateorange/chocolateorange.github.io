@@ -26,7 +26,7 @@
     "textlint-filter-rule-comments": "^1.2.1",
     "textlint-rule-preset-ja-technical-writing": "^1.0.0",
     "uglify-save-license": "^0.4.1",
-    "webpack": "^1.13.2"
+    "webpack": "^2.2.1"
   },
   "private": true,
   "scripts": {
@@ -43,7 +43,7 @@
     "webpack-compile:scripts": "npm run webpack -- --config webpack.config.scripts.js",
     "webpack-develop:includes": "npm run webpack-compile:includes -- --watch",
     "webpack-develop:scripts": "npm run webpack-compile:scripts -- --devtool inline-source-map --watch",
-    "webpack-minify:includes": "NODE_ENV=production npm run webpack-compile:includes -- --optimize-minimize",
-    "webpack-minify:scripts": "NODE_ENV=production npm run webpack-compile:scripts -- --optimize-minimize"
+    "webpack-minify:includes": "npm run webpack-compile:includes -- --optimize-minimize",
+    "webpack-minify:scripts": "npm run webpack-compile:scripts -- --optimize-minimize"
   }
 }

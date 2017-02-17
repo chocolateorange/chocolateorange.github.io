@@ -2,7 +2,9 @@
 
 const path = require('path');
 
-const webpack = require('webpack')
+const webpack = require('webpack');
+
+const uglifySaveLicense = require('uglify-save-license');
 
 module.exports = {
 
@@ -15,7 +17,7 @@ module.exports = {
   },
 
   output: {
-    path: './_includes/',
+    path: `${__dirname}/_includes/`,
     publicPath: './',
     filename: '[name].js',
     chunkFilename: 'chunk-[id]-[hash].js',
@@ -23,14 +25,22 @@ module.exports = {
     libraryTarget: 'var',
   },
 
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
-  },
-
   module: {
-    loaders: [
-      { test: /\.html?$/, exclude: /node_modules/, loader: 'html'  },
-      { test: /\.js$/,    exclude: /node_modules/, loader: 'babel' },
+    rules: [
+      {
+        exclude: /node_modules/,
+        test: /\.html?$/,
+        use: [
+          { loader: 'html-loader' },
+        ],
+      },
+      {
+        exclude: /node_modules/,
+        test: /\.js$/,
+        use: [
+          { loader: 'babel-loader' },
+        ],
+      },
     ],
   },
 
@@ -41,58 +51,35 @@ module.exports = {
 
   resolve: {
     extensions: [
-      '',
       '.js',
       '.html',
-    ],
-    modulesDirectories: [
-      'node_modules',
     ],
   },
 
   plugins: [
-    new webpack.NoErrorsPlugin,
-    new webpack.IgnorePlugin(/vertx/),
-    new webpack.optimize.OccurenceOrderPlugin,
-    new webpack.optimize.DedupePlugin,
+    new webpack.NoEmitOnErrorsPlugin,
     new webpack.optimize.AggressiveMergingPlugin,
   ].concat(
-    (process.argv.some(arg => /^(?:-p|--optimize-minimize)$/.test(arg))) ? [
-      // new webpack.DefinePlugin(
-      // ),
+    (process.argv.some(
+      (arg) => /^(?:-p|--optimize-minimize)$/.test(arg)
+    )) ? [
       new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          pure_funcs: [
-            'log',
-          ],
-        },
         output: {
-          comments: require('uglify-save-license'),
+          comments: uglifySaveLicense,
         },
       }),
     ] : [
-      new webpack.DefinePlugin({
-        log: function() {
-          if (typeof console !== 'undefined') {
-            if (typeof console.log === 'object') {
-              // for IE8 and IE9
-              Function.prototype.apply.call(console.log, console, arguments);
-            } else {
-              // for other browsers
-              console.log.apply(console, arguments);
-            }
-          }
-        },
-      }),
+      /* none */
     ]
   ).concat([
-    new webpack.BannerPlugin([
+    new webpack.BannerPlugin({
+      banner: [
       '@license Copyright(c) 2016 sasa+1',
       'https://github.com/chocolateorange/chocolateorange.github.io',
       'Released under the MIT license.',
-    ].join('\n'), {
-      raw: false,
+      ].join('\n'),
       entryOnly: true,
+      raw: false,
     }),
   ]),
 
