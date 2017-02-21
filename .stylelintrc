@@ -1,3 +1,4 @@
 {
+  "processors": "stylelint-processor-ignore-front-matter",
   "extends": "stylelint-config-standard"
 }
