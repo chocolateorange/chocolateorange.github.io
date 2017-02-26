@@ -12,7 +12,9 @@
       <div class="note__inner">
 
         <div class="note__content-area content-area">
-          <h2 class="content-area__title">{{ page.title }}</h2>
+          <h2 class="content-area__title title">
+            <a class="title__link" href=".">{{ page.title }}</a>
+          </h2>
           <div class="">
             <time class="content-area__pubdate ion-ios-clock-outline"><!--
               -->{{ page.date | split:" " | first }}<!--

@@ -18,12 +18,26 @@
 
     .note__content-area.content-area {
       .content-area__title {
-        color: #aaf;
         font-weight: normal;
         margin: 0;
 
         @include more-narrow-width {
           text-align: center;
+        }
+
+        .title__link {
+          transition: color 0.2s ease 0s;
+
+          &:link,
+          &:visited {
+            color: #aaf;
+            text-decoration: none;
+          }
+
+          &:hover,
+          &:active {
+            color: #f9f;
+          }
         }
       }
 
