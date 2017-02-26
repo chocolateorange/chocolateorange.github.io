@@ -31,6 +31,10 @@
         width: auto;
       }
 
+      @include more-narrow-width {
+        margin-bottom: 2rem;
+      }
+
       .search-area__title {
         color: #f9f;
         font-family: $fonts-title;
@@ -173,6 +177,10 @@
         margin-left: 0;
         margin-top: 3rem;
         width: auto;
+      }
+
+      @include more-narrow-width {
+        margin-top: 2rem;
       }
 
       .tags-area__title {
