@@ -3,6 +3,10 @@
 .footer {
   padding: 5rem 0 2rem;
 
+  @include more-narrow-width {
+    padding: 2rem 0;
+  }
+
   .footer__inner {
     box-sizing: border-box;
     margin: 0 auto;

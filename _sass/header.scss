@@ -3,6 +3,10 @@
 .header {
   padding: 2rem 0 5rem;
 
+  @include more-narrow-width {
+    padding: 2rem 0;
+  }
+
   .header__inner {
     box-sizing: border-box;
     margin: 0 auto;
