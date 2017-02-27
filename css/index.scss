@@ -48,6 +48,8 @@
       }
 
       .search-area__text {
+        border: 1px solid #999;
+        border-radius: 5px;
         width: 280px - 20px;
 
         @include narrow-width {
