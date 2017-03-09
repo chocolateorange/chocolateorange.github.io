@@ -47,8 +47,7 @@ exclude:
   - package.json
   - javascript
   - vendor
-  - webpack.config.includes.js
-  - webpack.config.scripts.js
+  - webpack.config.js
 
 defaults:
   - scope:
