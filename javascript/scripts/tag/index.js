@@ -1,36 +1,10 @@
 import _ from 'lodash';
 
 import domready from 'domready';
+import parseQuery from 'parse-query';
 
 import * as tag from './tag';
 import * as note from './note';
-
-/**
- * parse query string
- *
- * @param {String} [text]
- * @return {Object}
- */
-function parseQueryString(text = '') {
-  const result = {},
-        params = text.replace(/^\?/, '').split('&');
-
-  _.forEach(params, function(string) {
-    let key, value;
-
-    /=/.exec(string);
-
-    key = RegExp.leftContext;
-    value = RegExp.rightContext;
-
-    result[key] || (result[key] = []);
-    result[key].push(
-      decodeURIComponent(value) || null
-    );
-  });
-
-  return result;
-}
 
 /**
  * initialize
@@ -61,7 +35,7 @@ function initialize() {
   const { tags = [] } = JSON.parse(tagsJSONElement.innerHTML),
         { notes = [] } = JSON.parse(notesJSONElement.innerHTML);
 
-  const queries = parseQueryString(location.search),
+  const queries = parseQuery(location.search.replace(/^\?/, '')),
         queryTags = _.map(queries.q, _.toLower);
 
   //----------------------------------------------------------------------------
