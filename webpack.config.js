@@ -2,9 +2,11 @@
 
 const path = require('path');
 
+const uglifySaveLicense = require('uglify-save-license');
+
 const webpack = require('webpack');
 
-const uglifySaveLicense = require('uglify-save-license');
+const LodashWebpackPlugin = require('lodash-webpack-plugin');
 
 module.exports = function(env) {
   const baseConfig = {
@@ -47,6 +49,7 @@ module.exports = function(env) {
   };
 
   baseConfig.plugins = [
+    new LodashWebpackPlugin,
     new webpack.NoEmitOnErrorsPlugin,
     new webpack.optimize.AggressiveMergingPlugin,
     new webpack.BannerPlugin({
