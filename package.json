@@ -41,9 +41,9 @@
     "stylelint": "stylelint ./_sass/*.scss ./css/*.scss",
     "test": "run-s textlint eslint stylelint",
     "textlint": "textlint ./_drafts ./_posts",
-    "webpack": "webpack --colors --display-error-details --progress --module-bind json",
-    "webpack:compile": "npm run webpack",
-    "webpack:develop": "npm run webpack -- --watch",
-    "webpack:minify": "NODE_ENV=production npm run webpack:compile -- --optimize-minimize"
+    "webpack": "webpack --colors --display-error-details --progress",
+    "webpack:compile": "npm run webpack -- --devtool inline-source-map",
+    "webpack:develop": "npm run webpack:compile -- --watch",
+    "webpack:minify": "NODE_ENV=production npm run webpack -- --optimize-minimize"
   }
 }
