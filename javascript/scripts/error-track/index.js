@@ -10,7 +10,9 @@ function onError(event) {
       `lineno: ${event.lineno}\n` +
       `colno: ${event.colno}\n` +
       `message: ${event.message}\n` +
-      `stack: ${event.error && event.error.stack}`,
+      `stack: ${
+        (event.error && event.error.stack) ? event.error.stack : event.error
+      }`,
     exFatal: true,
   });
 }
