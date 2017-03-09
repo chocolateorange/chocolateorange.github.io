@@ -70,7 +70,7 @@ export function compile({ noteTags, queryTags }) {
   ]);
 
   return {
-    selectedTagsHTML: selectedTagsFlow(unselectTags).join(''),
-    unselectTagsHTML: unselectTagsFlow(selectedTags).join(''),
+    selectedTagsHTML: '<p>s</p>',//selectedTagsFlow(unselectTags).join(''),
+    unselectTagsHTML: '<p>u</p>',//unselectTagsFlow(selectedTags).join(''),
   };
 }
