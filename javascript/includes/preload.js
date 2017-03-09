@@ -1,3 +1,3 @@
-module.exports = {
-  fallback: require('fallback-preload'),
-};
+import fallbackPreload from 'fallback-preload';
+
+export const fallback = fallbackPreload;
