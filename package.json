@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "domready": "^1.0.8",
+    "event-listener": "github:sasaplus1-prototype/event-listener.js",
     "fallback-preload": "github:sasaplus1-prototype/fallback-preload.js",
     "lodash": "^4.17.4",
     "parse-query": "github:sasaplus1-prototype/parse-query.js"

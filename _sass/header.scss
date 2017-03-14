@@ -41,6 +41,13 @@
         font-weight: lighter;
         letter-spacing: 0.05rem;
         margin: 0;
+
+        &.offline::after {
+          color: #999;
+          content: "offline";
+          display: block;
+          font-size: 1.2rem;
+        }
       }
     }
   }

@@ -73,6 +73,7 @@ module.exports = function(env) {
   return [
     Object.assign({}, baseConfig, {
       entry: {
+        'offline': './javascript/includes/offline.js',
         'preload': './javascript/includes/preload.js',
       },
       output: {
