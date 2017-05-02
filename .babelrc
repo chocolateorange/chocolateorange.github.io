@@ -9,11 +9,7 @@
         ]
       ],
       "plugins": [
-        "lodash",
-        "transform-es3-member-expression-literals",
-        "transform-es3-property-literals",
-        "transform-undefined-to-void",
-        "transform-strict-mode"
+        "lodash"
       ]
     },
     "production": {
@@ -26,11 +22,7 @@
       ],
       "plugins": [
         "unassert",
-        "lodash",
-        "transform-es3-member-expression-literals",
-        "transform-es3-property-literals",
-        "transform-undefined-to-void",
-        "transform-strict-mode"
+        "lodash"
       ]
     }
   }
