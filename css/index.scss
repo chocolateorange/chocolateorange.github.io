@@ -171,7 +171,7 @@
     .index__tags-area.tags-area {
       box-sizing: border-box;
       float: right;
-      margin-left: 20px;
+      margin: 0 0 1rem 20px;
       width: 300px - 20px;
 
       @include narrow-width {
@@ -228,6 +228,70 @@
 
             &::before {
               margin-right: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .index__profile-area.profile-area {
+      box-sizing: border-box;
+      float: right;
+      margin-left: 20px;
+      width: 300px - 20px;
+
+      @include narrow-width {
+        box-sizing: content-box;
+        float: none;
+        margin: 3rem auto 0;
+      }
+
+      @include more-narrow-width {
+        margin-top: 2rem;
+      }
+
+      .profile-area__title {
+        color: #f9f;
+        font-family: $fonts-title;
+        font-weight: lighter;
+        margin: 0;
+        text-align: center;
+      }
+
+      .profile-area__info {
+        display: flex;
+        margin-top: 1rem;
+
+        .profile-area__icon {
+          height: 72px;
+          width: 72px;
+        }
+
+        .profile-area__name {
+          margin: auto;
+        }
+      }
+
+      .profile-area__links {
+        display: flex;
+        list-style-type: none;
+        margin: 1rem auto 0;
+        padding: 0;
+        width: 50%;
+
+        .profile-area__item {
+          text-align: center;
+          width: 50%;
+
+          .profile-area__link {
+            font-size: 3rem;
+
+            &[href*="twitter"] {
+              color: #1da1f2;
+            }
+
+            &[href*="github"] {
+              color: #000;
             }
           }
         }

@@ -34,19 +34,19 @@
 
           .item__link {
             font-size: 2rem;
-          }
 
-          .item__feed {
-            &:link,
-            &:visited {
-              color: #fe9507;
+            &[href*="feed.xml"] {
+              &:link,
+              &:visited {
+                color: #fe9507;
+              }
             }
-          }
 
-          .item__github {
-            &:link,
-            &:visited {
-              color: #000;
+            &[href*="github"] {
+              &:link,
+              &:visited {
+                color: #000;
+              }
             }
           }
         }
