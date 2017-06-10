@@ -58,3 +58,23 @@ defaults:
     values:
       layout:
         'note'
+
+author:
+  sasaplus1
+
+twitter:
+  username:
+    sasaplus1
+
+lang:
+  ja_JP
+
+logo:
+  /images/icon_144x144.png
+
+social:
+  name:
+    sasaplus1
+  links:
+    - https://twitter.com/sasaplus1
+    - https://github.com/sasaplus1
