@@ -1,7 +1,7 @@
 {
   "name": "write-a-new-post",
   "description": "write a post with $EDITOR",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "bin": {
     "write-a-new-post": "./index.js"

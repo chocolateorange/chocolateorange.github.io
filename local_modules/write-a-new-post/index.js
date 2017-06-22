@@ -22,7 +22,7 @@ commander
     const editor = process.env.EDITOR;
 
     if (!editor) {
-      return console.error('$EDITOR is not defined.');
+      return process.stderr.write('$EDITOR is not defined.');
     }
 
     const baseDirectory = path.resolve(argument);
