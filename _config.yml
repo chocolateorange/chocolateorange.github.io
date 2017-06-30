@@ -43,9 +43,11 @@ exclude:
   - LICENSE
   - README.md
   - Rakefile
-  - node_modules
-  - package.json
   - javascript
+  - local_modules
+  - node_modules
+  - npm_scripts
+  - package.json
   - vendor
   - webpack.config.js
 
