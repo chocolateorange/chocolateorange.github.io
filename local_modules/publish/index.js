@@ -15,7 +15,7 @@ commander
 
 commander
   .arguments('<directory>')
-  .description('move files in _drafts to _posts')
+  .description(metadata.description)
   .action(function(argument) {
     const baseDirectory = path.resolve(argument);
 

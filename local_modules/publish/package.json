@@ -1,10 +1,10 @@
 {
-  "name": "publish-drafts",
-  "description": "move files in _drafts to _posts",
-  "version": "0.0.0",
+  "name": "publish",
+  "description": "publish drafts, move files in _drafts to _posts",
+  "version": "0.0.1",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "bin": {
-    "publish-drafts": "./index.js"
+    "publish": "./index.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
