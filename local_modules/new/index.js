@@ -17,57 +17,130 @@ commander
 
 commander
   .arguments('<directory>')
-  .description('write a new post with $EDITOR')
+  .description(metadata.description)
+  .option('-m, --max-find-count <count>', 'max find count [100]', (n) => parseInt(n, 10), 100)
+  .option('-t, --template <template>', 'template file path')
   .action(function(argument) {
+
     const editor = process.env.EDITOR;
 
     if (!editor) {
-      return process.stderr.write('$EDITOR is not defined.');
+      process.stderr.write('$EDITOR is not defined.\n');
+
+      return;
     }
+
+    //--------------------------------------------------------------------------
 
     const baseDirectory = path.resolve(argument);
 
+    //--------------------------------------------------------------------------
+
     const now = new Date();
 
-    const dirName = strftime('%Y/%m', now),  // YYYY/MM
-          filePrefix = strftime('%F', now);  // YYYY-MM-DD
+    const filePath = getFilePath({
+      baseDirectory,
+      dirPath: strftime('%Y/%m', now),      // YYYY/MM
+      fileNamePrefix: strftime('%F', now),  // YYYY-MM-DD
+      maxFindCount: commander.maxFindCount,
+    });
 
-    const existsSync = fs.existsSync.bind(fs);
+    if (!filePath) {
+      process.stderr.write(
+        'cannot create file. ' +
+        'try pass to more large value for --max-find-count.\n'
+      );
 
-    const postNumber = (function(){
-      for (let i = 1; i < 100; ++i) {
+      return;
+    }
+
+    //--------------------------------------------------------------------------
+
+    const template = (commander.template) ?
+      fs.readFileSync(
+        path.resolve(commander.template),
+        'utf8'
+      ) : [
+        '---',
+        'tags:',
+        'title:',
+        '---',
+        '',
+      ].join('\n');
+
+    createDraft({
+      filePath,
+      text: template,
+    });
+
+    executeEditor({
+      editor,
+      filePath,
+    });
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * get next post file path
+     *
+     * @param {Object} params
+     * @param {string} params.baseDirectory
+     * @param {string} params.dirPath
+     * @param {string} params.fileNamePrefix
+     * @param {number} params.maxFindCount
+     * @return {string}
+     */
+    function getFilePath({ baseDirectory, dirPath, fileNamePrefix, maxFindCount }) {
+      const existsSync = fs.existsSync.bind(fs);
+
+      for (let i = 1; i < maxFindCount; ++i) {
         const number = (i < 10) ? `0${i}` : i;
 
         const files = [
-          path.join(baseDirectory, `_drafts/${dirName}/${filePrefix}-${number}.md`),
-          path.join(baseDirectory, `_posts/${dirName}/${filePrefix}-${number}.md`),
+          path.join(baseDirectory, `_drafts/${dirPath}/${fileNamePrefix}-${number}.md`),
+          path.join(baseDirectory, `_posts/${dirPath}/${fileNamePrefix}-${number}.md`),
         ];
 
         if (!files.some(existsSync)) {
-          return number;
+          return path.join(
+            baseDirectory, `_drafts/${dirPath}/${fileNamePrefix}-${number}.md`
+          );
         }
       }
-    }());
 
-    const filepath = path.join(
-      baseDirectory, `_drafts/${dirName}/${filePrefix}-${postNumber}.md`
-    );
+      return '';
+    }
 
-    mkdirp.sync(path.dirname(filepath), {
-      mode: parseInt('755', 8),
-    });
+    /**
+     * create draft
+     *
+     * @param {Object} params
+     * @param {string} params.filePath
+     * @param {string} params.text
+     */
+    function createDraft({ filePath, text }) {
+      const dirPath = path.dirname(filePath);
 
-    fs.writeFileSync(filepath, [
-      '---',
-      'tags:',
-      'title:',
-      '---',
-      '',
-    ].join('\n'));
+      mkdirp.sync(dirPath, {
+        mode: parseInt('755', 8),
+      });
 
-    spawnSync(editor, [filepath], {
-      stdio: 'inherit',
-    });
+      fs.writeFileSync(filePath, text);
+    }
+
+    /**
+     * execute user's favorite editor
+     *
+     * @param {Object} params
+     * @param {string} params.editor
+     * @param {string} params.filePath
+     * @return {Object}
+     */
+    function executeEditor({ editor, filePath }) {
+      return spawnSync(editor, [filePath], {
+        stdio: 'inherit',
+      });
+    }
   });
 
 commander

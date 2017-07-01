@@ -1,10 +1,10 @@
 {
-  "name": "write-a-new-post",
-  "description": "write a post with $EDITOR",
-  "version": "0.0.1",
+  "name": "new",
+  "description": "write a new post with $EDITOR",
+  "version": "0.1.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "bin": {
-    "write-a-new-post": "./index.js"
+    "new": "./index.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
