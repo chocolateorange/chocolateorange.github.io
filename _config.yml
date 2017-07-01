@@ -44,7 +44,6 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
-  - Rakefile
   - javascript
   - local_modules
   - node_modules
