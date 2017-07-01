@@ -37,15 +37,15 @@
     "eslint": "eslint ./javascript",
     "fixpack": "fixpack",
     "minify": "npm run webpack:minify",
+    "new": "new \"$(npm prefix)\"",
     "preview": "bundle exec jekyll serve --drafts --watch",
-    "publish": "publish-drafts \"$(npm prefix)\"",
+    "publish": "publish \"$(npm prefix)\"",
     "stylelint": "stylelint ./_sass/*.scss ./css/*.scss",
     "test": "run-s textlint eslint stylelint",
     "textlint": "textlint ./_drafts ./_posts",
     "webpack": "webpack --colors --display-error-details --progress",
     "webpack:compile": "npm run webpack -- --devtool inline-source-map",
     "webpack:develop": "npm run webpack:compile -- --watch",
-    "webpack:minify": "NODE_ENV=production npm run webpack -- --optimize-minimize",
-    "write": "write-a-new-post \"$(npm prefix)\""
+    "webpack:minify": "NODE_ENV=production npm run webpack -- --optimize-minimize"
   }
 }
