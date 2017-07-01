@@ -48,6 +48,7 @@ exclude:
   - local_modules
   - node_modules
   - npm_scripts
+  - sources
   - package.json
   - vendor
   - webpack.config.js
