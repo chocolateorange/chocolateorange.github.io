@@ -4,6 +4,13 @@
 
 website of chocolateorange
 
+## Setup
+
+```console
+$ npm install
+$ npm run install:gem
+```
+
 ## License
 
 The MIT license. Please see LICENSE file.
