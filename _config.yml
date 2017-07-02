@@ -13,16 +13,6 @@ timezone:
 future:
   true
 
-markdown:
-  kramdown
-
-highlighter:
-  rouge
-
-kramdown:
-  input:
-    GFM
-
 sass:
   style:
     compressed
