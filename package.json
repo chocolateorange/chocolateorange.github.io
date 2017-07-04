@@ -31,7 +31,7 @@
   },
   "private": true,
   "scripts": {
-    "amp": "amp \"$(npm prefix)\"",
+    "amp": "amp \"$(npm prefix)\" && bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss > _includes/amp/amp.css",
     "build": "bundle exec jekyll build",
     "compile": "npm run webpack:compile",
     "develop": "npm run webpack:develop",
