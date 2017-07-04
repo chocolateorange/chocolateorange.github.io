@@ -234,7 +234,7 @@
       }
     }
 
-    .index__profile-area.profile-area {
+    .index__author-area.author-area {
       box-sizing: border-box;
       float: right;
       margin-left: 20px;
@@ -250,7 +250,7 @@
         margin-top: 2rem;
       }
 
-      .profile-area__title {
+      .author-area__title {
         color: #f9f;
         font-family: $fonts-title;
         font-weight: lighter;
@@ -258,33 +258,33 @@
         text-align: center;
       }
 
-      .profile-area__info {
+      .author-area__info {
         display: flex;
         margin-top: 1rem;
 
-        .profile-area__icon {
+        .author-area__icon {
           height: 72px;
           width: 72px;
         }
 
-        .profile-area__name {
+        .author-area__name {
           color: #666;
           margin: auto;
         }
       }
 
-      .profile-area__links {
+      .author-area__links {
         display: flex;
         list-style-type: none;
         margin: 1rem auto 0;
         padding: 0;
         width: 50%;
 
-        .profile-area__item {
+        .author-area__item {
           text-align: center;
           width: 50%;
 
-          .profile-area__link {
+          .author-area__link {
             font-size: 3rem;
 
             &[href*="twitter"] {
