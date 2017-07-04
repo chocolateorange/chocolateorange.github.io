@@ -6,6 +6,7 @@
     "parse-query": "github:sasaplus1-prototype/parse-query.js"
   },
   "devDependencies": {
+    "amp": "file:local_modules/amp",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-lodash": "^3.2.11",
@@ -30,6 +31,7 @@
   },
   "private": true,
   "scripts": {
+    "amp": "amp \"$(npm prefix)\" && bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss > _includes/amp/amp.css",
     "build": "bundle exec jekyll build",
     "compile": "npm run webpack:compile",
     "develop": "npm run webpack:develop",

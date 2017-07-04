@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html amp>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
+    {% capture seo_text %}{% seo %}{% endcapture %}
+    {% assign seo_tags = seo_text | newline_to_br | split: '<br />' %}
+    {% for seo_tag in seo_tags %}{% unless seo_tag contains 'rel="canonical"' %}{{ seo_tag }}{% endunless %}{% endfor %}
+    <link rel="canonical" href="{{ site.url }}{{ page.url | remove_first: '/amp' }}">
+    {% feed_meta %}
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>{% include amp/amp.css %}</style>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-720754-33"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+
+    {% include header.html %}
+
+    <main class="note" role="main">
+      <div class="note__inner">
+
+        <div class="note__content-area content-area">
+          <h2 class="content-area__title title">
+            <a class="title__link" href=".">{{ page.title }}</a>
+          </h2>
+          <div class="">
+            <div class="content-area__meta meta">
+              {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
+              <span class="meta__blob">
+                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}">Blob</a>
+              </span>
+              <span class="meta__blame">
+                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}">Blame</a>
+              </span>
+              <span class="meta__history">
+                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}">History</a>
+              </span>
+            </div>
+
+            <section class="content-area__content">
+              {{ content }}
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+
+        <div class="footer__copyright copyright">
+          <small class="copyright__text">
+            <a class="copyright__link" href="/">chocolateorange</a> © 2004 sasa+1
+          </small>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+</html>

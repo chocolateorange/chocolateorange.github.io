@@ -1,0 +1,202 @@
+@import "common";
+@import "header";
+@import "footer";
+@import "highlight";
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Poiret One'),
+    local('PoiretOne-Regular'),
+    url(https://fonts.gstatic.com/l/font?kit=ObxytbfKasUWX7_ipglurF01O8czKBe0rKREZEGaaH33rGVtsTkPsbDajuO5ueQw&skey=b92d66791719178&v=v4) format('woff2');
+}
+
+.note {
+  .note__inner {
+    margin: 0;
+    padding: 0 1rem;
+    width: auto;
+
+    .note__content-area.content-area {
+      .content-area__title {
+        font-weight: normal;
+        margin: 0;
+        text-align: center;
+
+        .title__link {
+          transition: color 0.2s ease 0s;
+
+          &:link,
+          &:visited {
+            color: #aaf;
+            text-decoration: none;
+          }
+
+          &:hover,
+          &:active {
+            color: #f9f;
+          }
+        }
+      }
+
+      div {
+        .content-area__pubdate {
+          color: #666;
+          display: block;
+          font-family: $fonts-en;
+          font-size: 80%;
+          margin-right: 0;
+          margin-top: 0.5rem;
+          text-align: center;
+          text-shadow: 0 1px 0 white;
+
+          &::before {
+            margin-right: 3px;
+          }
+        }
+
+        .content-area__meta.meta {
+          display: block;
+          margin-top: 0.5rem;
+          text-align: center;
+
+          .meta__link {
+            font-family: $fonts-en;
+            font-size: 80%;
+            font-weight: normal;
+            text-shadow: 0 1px 0 white;
+
+            &:link,
+            &:visited {
+              color: #f9f;
+              text-decoration: none;
+            }
+
+            &:hover,
+            &:active {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .content-area__content {
+          color: #666;
+          margin-top: 2rem;
+
+          // #, ##, ###, ####, #####, ######
+          /* stylelint-disable-next-line selector-list-comma-newline-after */
+          h1, h2, h3, h4, h5, h6 {
+            border-bottom: 1px solid #ccc;
+            font-weight: normal;
+            margin: 1rem 0;
+            text-align: center;
+          }
+
+          // [link](url)
+          a:link,
+          a:visited {
+            color: #aaf;
+            text-decoration: none;
+          }
+
+          a:hover,
+          a:active {
+            text-decoration: underline;
+          }
+
+          // - 1
+          // - 2
+          //
+          // * 1
+          // * 2
+          ul {
+            list-style-type: circle;
+          }
+
+          // ---
+          hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 2rem 0;
+          }
+
+          // >
+          blockquote {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 0;
+            padding: 0.3rem 0.5rem;
+            position: relative;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          // |column1|column2|column3|
+          // |-------|-------|-------|
+          // |column1|column2|column3|
+          // |column1|column2|column3|
+          table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+
+            th,
+            td {
+              border: 1px solid #ccc;
+              padding: 0 0.2rem;
+            }
+          }
+
+          // `code`
+          code.highlighter-rouge {
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            color: #000;
+            font-family: $fonts-code;
+            padding: 0.2rem 0.2rem 0;
+          }
+
+          // ```language
+          // ```
+          // or
+          // {% highlight language %}
+          // {% endhighlight %}
+          .highlight {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #000;
+            margin: 0;
+            overflow: scroll;
+            padding: 0.3rem 0.5rem;
+
+            pre {
+              margin: 0;
+            }
+
+            code {
+              font-family: $fonts-code;
+
+              @include highlight;
+            }
+          }
+
+          div.highlighter-rouge,
+          figure.highlight {
+            margin: 1rem 0;
+          }
+
+          // any embed content
+          iframe {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
