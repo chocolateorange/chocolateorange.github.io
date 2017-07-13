@@ -39,13 +39,19 @@
             <div class="content-area__meta meta">
               {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
               <span class="meta__blob">
-                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}">Blob</a>
+                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}"><!--
+                  --><span class="meta__text ion-social-github">Blob</span><!--
+                --></a>
               </span>
               <span class="meta__blame">
-                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}">Blame</a>
+                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}"><!--
+                  --><span class="meta__text ion-social-github">Blame</span><!--
+                --></a>
               </span>
               <span class="meta__history">
-                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}">History</a>
+                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}"><!--
+                  --><span class="meta__text ion-social-github">History</span><!--
+                --></a>
               </span>
             </div>
 

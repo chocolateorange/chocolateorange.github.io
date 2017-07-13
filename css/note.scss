@@ -46,7 +46,7 @@
           color: #666;
           font-family: $fonts-en;
           font-size: 80%;
-          margin-right: 0.5rem;
+          margin-right: 1rem;
           text-shadow: 0 1px 0 white;
 
           &::before {
@@ -63,7 +63,7 @@
 
         .content-area__tags {
           display: inline;
-          margin: 0 0.5rem 0 0;
+          margin: 0 1rem 0 0;
           padding: 0;
 
           @include more-narrow-width {
@@ -122,13 +122,23 @@
 
             &:link,
             &:visited {
-              color: #f9f;
+              color: #666;
               text-decoration: none;
             }
 
             &:hover,
             &:active {
               text-decoration: underline;
+            }
+
+            .meta__text {
+              display: inline;
+              font-family: $fonts-en;
+              text-shadow: 0 1px 0 white;
+
+              &::before {
+                margin-right: 2px;
+              }
             }
           }
         }
