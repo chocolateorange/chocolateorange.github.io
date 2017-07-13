@@ -57,30 +57,6 @@
           }
         }
 
-        .content-area__meta.meta {
-          display: block;
-          margin-top: 0.5rem;
-          text-align: center;
-
-          .meta__link {
-            font-family: $fonts-en;
-            font-size: 80%;
-            font-weight: normal;
-            text-shadow: 0 1px 0 white;
-
-            &:link,
-            &:visited {
-              color: #f9f;
-              text-decoration: none;
-            }
-
-            &:hover,
-            &:active {
-              text-decoration: underline;
-            }
-          }
-        }
-
         .content-area__content {
           color: #666;
           margin-top: 2rem;

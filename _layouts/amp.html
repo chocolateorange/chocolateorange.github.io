@@ -40,19 +40,6 @@
             <a class="title__link" href=".">{{ page.title }}</a>
           </h2>
           <div class="">
-            <div class="content-area__meta meta">
-              {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
-              <span class="meta__blob">
-                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}">Blob</a>
-              </span>
-              <span class="meta__blame">
-                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}">Blame</a>
-              </span>
-              <span class="meta__history">
-                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}">History</a>
-              </span>
-            </div>
-
             <section class="content-area__content">
               {{ content }}
             </section>
