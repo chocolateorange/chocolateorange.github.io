@@ -1,0 +1,15 @@
+{
+  "short_name": "c.o.",
+  "name": "chocolateorange",
+  "icons": [
+    {
+      "src": "images/icon_144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#ffffff",
+  "theme_color": "#f6f6ff",
+  "display": "browser"
+}
