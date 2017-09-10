@@ -1,4 +1,49 @@
 {
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": [
+                "last 2 Chrome versions",
+                "last 2 Edge versions",
+                "last 2 Firefox versions",
+                "last 2 Safari versions",
+                "last 2 iOS versions",
+                "last 2 ChromeAndroid versions"
+              ]
+            }
+          ]
+        ],
+        "plugins": [
+          "lodash"
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": [
+                "last 2 Chrome versions",
+                "last 2 Edge versions",
+                "last 2 Firefox versions",
+                "last 2 Safari versions",
+                "last 2 iOS versions",
+                "last 2 ChromeAndroid versions"
+              ]
+            }
+          ]
+        ],
+        "plugins": [
+          "unassert",
+          "lodash"
+        ]
+      }
+    }
+  },
   "dependencies": {
     "domready": "^1.0.8",
     "fallback-preload": "github:sasaplus1-prototype/fallback-preload.js",
@@ -30,6 +75,18 @@
     "node": ">=8.4.0",
     "npm": ">=5.4.1"
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "root": true
+  },
   "private": true,
   "scripts": {
     "amp": "amp \"$(npm prefix)\" && bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss | sed $'1s/^\\xEF\\xBB\\xBF//' > _includes/amp/amp.css",
@@ -49,5 +106,9 @@
     "webpack:compile": "npm run webpack -- --devtool inline-source-map",
     "webpack:develop": "npm run webpack:compile -- --watch",
     "webpack:minify": "NODE_ENV=production npm run webpack -- --optimize-minimize"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "processors": "stylelint-processor-ignore-front-matter"
   }
 }
