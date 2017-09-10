@@ -62,8 +62,6 @@ commander
         'utf8'
       ) : [
         '---',
-        'tags:',
-        'title:',
         '---',
         '',
       ].join('\n');
