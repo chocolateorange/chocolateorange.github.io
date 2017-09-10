@@ -29,6 +29,10 @@
     "uglify-save-license": "^0.4.1",
     "webpack": "^2.2.1"
   },
+  "engines": {
+    "node": ">=8.4.0",
+    "npm": ">=5.4.1"
+  },
   "private": true,
   "scripts": {
     "amp": "amp \"$(npm prefix)\" && bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss | sed $'1s/^\\xEF\\xBB\\xBF//' > _includes/amp/amp.css",
