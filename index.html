@@ -39,34 +39,8 @@
                 <time class="note__pubdate ion-ios-clock-outline"><!--
                   -->{{ post.date | split:" " | first }}<!--
                 --></time>
-                <ul class="note__tags">
-                  {% assign tags = post.tags | sort %}
-                  {% for tag in tags %}
-                  <li class="tag">
-                    <span class="tag__text ion-ios-pricetag-outline"><!--
-                      -->{{ tag }}<!--
-                    --></span>
-                  </li>
-                  {% endfor %}
-                </ul>
               </a>
             </li>
-            {% endfor %}
-          </ul>
-        </nav>
-
-        <nav class="index__tags-area tags-area">
-          <h2 class="tags-area__title">tags</h2>
-          <ul class="tags-area__tags">
-            {% assign tags = site.tags | sort %}
-            {% for tag in tags %}
-              {% assign name = tag[0] %}
-              {% assign post = tag[1] %}
-              <li class="tag">
-                <a class="tag__link" href="/tag/?q={{ name }}">
-                  <span class="tag__text ion-ios-pricetag-outline">{{ name }}</span><!--
-                --></a>
-              </li>
             {% endfor %}
           </ul>
         </nav>
