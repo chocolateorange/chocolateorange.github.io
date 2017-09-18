@@ -87,7 +87,6 @@ module.exports = function(env) {
     Object.assign({}, baseConfig, {
       entry: {
         'error-track': './javascript/scripts/error-track/index.js',
-        'tag': './javascript/scripts/tag/index.js',
       },
       output: {
         path: `${__dirname}/js/`,
