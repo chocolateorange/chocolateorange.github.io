@@ -20,22 +20,6 @@
               -->{{ page.date | split:" " | first }}<!--
             --></time>
 
-            {% if page.tags %}
-            <ul class="content-area__tags">
-              {% assign tags = page.tags | sort %}
-              {% for tag in tags %}
-                {% assign name = tag %}
-                <li class="tag">
-                  <a class="tag__link" href="/tag/?q={{ name }}">
-                    <span class="tag__text ion-ios-pricetag-outline"><!--
-                      -->{{ name }}<!--
-                    --></span><!--
-                  --></a>
-                </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-
             <div class="content-area__meta meta">
               {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
               <span class="meta__blob">
