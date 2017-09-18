@@ -54,6 +54,12 @@ defaults:
       layout:
         'note'
 
+paginate:
+  5
+
+paginate_path:
+  /note/page/:num
+
 author:
   sasaplus1
 
