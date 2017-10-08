@@ -89,23 +89,7 @@
   },
   "private": true,
   "scripts": {
-    "amp": "amp \"$(npm prefix)\" && bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss | sed $'1s/^\\xEF\\xBB\\xBF//' > _includes/amp/amp.css",
-    "build": "bundle exec jekyll build",
-    "compile": "npm run webpack:compile",
-    "develop": "npm run webpack:develop",
-    "eslint": "eslint ./javascript",
-    "fixpack": "fixpack",
-    "install:gem": "bundle install --path vendor/bundle",
-    "minify": "npm run webpack:minify",
-    "new": "new \"$(npm prefix)\"",
-    "preview": "bundle exec jekyll serve --drafts --watch",
-    "publish": "publish \"$(npm prefix)\"",
-    "stylelint": "stylelint ./_sass/*.scss ./css/*.scss",
-    "test": "run-p --aggregate-output eslint stylelint",
-    "webpack": "webpack --colors --display-error-details --progress",
-    "webpack:compile": "npm run webpack -- --devtool inline-source-map",
-    "webpack:develop": "npm run webpack:compile -- --watch",
-    "webpack:minify": "NODE_ENV=production npm run webpack -- --optimize-minimize"
+    "test": "make test"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

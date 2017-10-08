@@ -33,14 +33,15 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - Makefile
   - README.md
   - javascript
   - local_modules
   - node_modules
   - npm_scripts
-  - sources
-  - package.json
   - package-lock.json
+  - package.json
+  - sources
   - vendor
   - webpack.config.js
 
