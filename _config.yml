@@ -45,7 +45,22 @@ exclude:
   - vendor
   - webpack.config.js
 
+collections:
+  amp:
+    permalink:
+      /amp/:year/:month/:day/:title/
+    output:
+      true
+
 defaults:
+  - scope:
+      path:
+        '_amp'
+      type:
+        'amp'
+    values:
+      layout:
+        'amp'
   - scope:
       path:
         ''
