@@ -18,7 +18,12 @@
     }
 
     .header__title.title {
-      text-align: center;
+      margin: auto 0 auto 2rem;
+
+      @include more-narrow-width {
+        margin: 0 auto;
+        text-align: center;
+      }
 
       .title__link {
         transition: color 0.2s ease 0s;
@@ -38,6 +43,7 @@
       .title__text {
         display: inline;
         font-family: $fonts-title;
+        font-size: 1.6rem;
         font-weight: lighter;
         letter-spacing: 0.05rem;
         margin: 0;
