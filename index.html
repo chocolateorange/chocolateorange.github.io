@@ -11,39 +11,38 @@
     {% include header.html %}
 
     <main class="index" role="main">
-      <div class="index__inner clearfix">
+      <div class="index__inner">
 
-        <div class="index__search-area search-area">
-          <h2 class="search-area__title">search</h2>
-          <form class="search-area__form" action="https://www.google.com/search" method="GET">
-            <input type="hidden" name="as_sitesearch" value="chocolateorange.github.io">
-            <input class="search-area__text" type="search" name="as_q">
-            <label class="search-area__icon ion-ios-search">
-              <input class="search-area__submit" type="submit" value="search">
-            </label>
-          </form>
-        </div>
-
-        <nav class="index__notes-area notes-area">
-          <h2 class="notes-area__title">notes</h2>
+        <div class="index__notes-area notes-area">
           <ul class="notes-area__notes">
             {% for post in site.posts %}
             <li class="note">
-              {% if post.layout == 'slide' %}
-                {% assign link_class = 'note__link ion-ios-albums-outline' %}
-              {% else %}
-                {% assign link_class = 'note__link' %}
-              {% endif %}
-              <a class="{{ link_class }}" href="{{ post.url }}">
-                <h2 class="note__title">{{ post.title }}</h2>
-                <time class="note__pubdate ion-ios-clock-outline"><!--
-                  -->{{ post.date | split:" " | first }}<!--
-                --></time>
-              </a>
+              <article class="note__inner">
+                <header class="note__header clearfix">
+                  <h1 class="note__title">
+                    <a class="note__title-link" href="{{ post.url }}"><!--
+                    --><time class="note__pubdate ion-ios-clock-outline">{{ post.date | split:" " | first }}</time><!--
+                    --><span class="note__number ion-pound">{{ post.id | split:"/" | last }}</span><!--
+                    --></a>
+                  </h1>
+                  <div class="note__link-area links">
+                    <a class="links__link" title="blob" href="{{ site.repository }}/blob/master/{{ post.path }}"><!--
+                    --><span class="ion-ios-paper"></span><!--
+                    --></a>
+                    <a class="links__link" title="history" href="{{ site.repository }}/commits/master/{{ post.path }}"><!--
+                    --><span class="ion-ios-photos"></span><!--
+                    --></a>
+                    <a class="links__link" title="edit" href="{{ site.repository }}/edit/master/{{ post.path }}"><!--
+                    --><span class="ion-edit"></span><!--
+                    --></a>
+                  </div>
+                </header>
+                <div class="note__content">{{ post.content }}</div>
+              </article>
             </li>
             {% endfor %}
           </ul>
-        </nav>
+        </div>
 
       </div>
     </main>

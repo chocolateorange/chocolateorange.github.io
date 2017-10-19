@@ -1,0 +1,128 @@
+@import "common";
+@import "highlight";
+
+@mixin note {
+  color: #666;
+
+  // #, ##, ###, ####, #####, ######
+  /* stylelint-disable-next-line selector-list-comma-newline-after */
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+    margin: 3rem 0 1rem;
+
+    @include more-narrow-width {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+
+  // [link](url)
+  a:link,
+  a:visited {
+    color: #aaf;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+
+  // - 1
+  // - 2
+  //
+  // * 1
+  // * 2
+  ul {
+    list-style-type: circle;
+  }
+
+  // ---
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+  }
+
+  // >
+  blockquote {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    position: relative;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  // |column1|column2|column3|
+  // |-------|-------|-------|
+  // |column1|column2|column3|
+  // |column1|column2|column3|
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 0 0.2rem;
+    }
+  }
+
+  // `code`
+  code.highlighter-rouge {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    color: #000;
+    font-family: $fonts-code;
+    padding: 0.2rem 0.2rem 0;
+  }
+
+  // ```language
+  // ```
+  // or
+  // {% highlight language %}
+  // {% endhighlight %}
+  .highlight {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    margin: 0;
+    overflow: scroll;
+    padding: 0.3rem 0.5rem;
+
+    @include narrow-width {
+      overflow: visible;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    pre {
+      margin: 0;
+    }
+
+    code {
+      font-family: $fonts-code;
+
+      @include highlight;
+    }
+  }
+
+  div.highlighter-rouge,
+  figure.highlight {
+    margin: 1rem 0;
+  }
+
+  // any embed content
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
