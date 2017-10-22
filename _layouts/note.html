@@ -8,42 +8,31 @@
   <body>
     {% include header.html %}
 
-    <main class="note" role="main">
-      <div class="note__inner">
+    <main class="note-page" role="main">
+      <div class="note">
 
-        <div class="note__content-area content-area">
-          <h2 class="content-area__title title">
-            <a class="title__link" href=".">{{ page.title }}</a>
-          </h2>
-          <div class="">
-            <time class="content-area__pubdate ion-ios-clock-outline"><!--
-              -->{{ page.date | split:" " | first }}<!--
-            --></time>
-
-            <div class="content-area__meta meta">
-              {% assign prefix = "https://github.com/chocolateorange/chocolateorange.github.io" %}
-              <span class="meta__blob">
-                <a class="meta__link" href="{{ prefix }}/blob/master/{{ page.path }}"><!--
-                  --><span class="meta__text ion-social-github">Blob</span><!--
-                --></a>
-              </span>
-              <span class="meta__blame">
-                <a class="meta__link" href="{{ prefix }}/blame/master/{{ page.path }}"><!--
-                  --><span class="meta__text ion-social-github">Blame</span><!--
-                --></a>
-              </span>
-              <span class="meta__history">
-                <a class="meta__link" href="{{ prefix }}/commits/master/{{ page.path }}"><!--
-                  --><span class="meta__text ion-social-github">History</span><!--
-                --></a>
-              </span>
+        <article class="note__inner">
+          <header class="note__header clearfix">
+            <h1 class="note__title">
+              <a class="note__title-link" href="{{ page.url }}"><!--
+              --><time class="note__pubdate ion-ios-clock-outline">{{ page.date | split:" " | first }}</time><!--
+              --><span class="note__number ion-pound">{{ page.id | split:"/" | last }}</span><!--
+              --></a>
+            </h1>
+            <div class="note__link-area links">
+              <a class="links__link" title="blob" href="{{ site.repository }}/blob/master/{{ page.path }}"><!--
+              --><span class="ion-ios-paper"></span><!--
+              --></a>
+              <a class="links__link" title="history" href="{{ site.repository }}/commits/master/{{ page.path }}"><!--
+              --><span class="ion-ios-photos"></span><!--
+              --></a>
+              <a class="links__link" title="edit" href="{{ site.repository }}/edit/master/{{ page.path }}"><!--
+              --><span class="ion-edit"></span><!--
+              --></a>
             </div>
-
-            <section class="content-area__content">
-              {{ content }}
-            </section>
-          </div>
-        </div>
+          </header>
+          <div class="note__content">{{ page.content }}</div>
+        </article>
 
       </div>
     </main>
