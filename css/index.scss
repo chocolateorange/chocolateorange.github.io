@@ -47,7 +47,7 @@
             .note__header {
               border-bottom: 1px solid #ccf;
               display: flex;
-              padding: 0.3rem 0 0.3rem 1rem;
+              padding: 0.3rem 0 0.3rem 0.8rem;
 
               .note__title {
                 margin: auto 0;
@@ -115,7 +115,7 @@
 
             .note__content {
               overflow: scroll;
-              padding: 1rem 0 0 1rem;
+              padding: 0.8rem 0 0 0.8rem;
 
               @include note;
 
