@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
     {% capture seo_text %}{% seo %}{% endcapture %}
     {% assign seo_tags = seo_text | newline_to_br | split: '<br />' %}
-    {% for seo_tag in seo_tags %}{% unless seo_tag contains 'rel="canonical"' %}{{ seo_tag }}{% endunless %}{% endfor %}
+    {% for seo_tag in seo_tags %}
+      {% unless seo_tag contains 'rel="canonical"' %}
+        {{ seo_tag }}
+      {% endunless %}
+    {% endfor %}
     <link rel="canonical" href="{{ site.url }}{{ page.url | remove_first: '/amp' }}">
     {% feed_meta %}
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>{% include amp/amp.css %}</style>
+    {% capture scss_text %}{% include amp/amp.scss %}{% endcapture %}
+    <style amp-custom>{{ scss_text | scssify }}</style>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
@@ -32,33 +38,36 @@
 
     {% include header.html %}
 
-    <main class="note" role="main">
-      <div class="note__inner">
+    <main class="note-page" role="main">
+      <div class="note">
 
-        <div class="note__content-area content-area">
-          <h2 class="content-area__title title">
-            <a class="title__link" href=".">{{ page.title }}</a>
-          </h2>
-          <div class="">
-            <section class="content-area__content">
-              {{ content }}
-            </section>
-          </div>
-        </div>
+        <article class="note__inner">
+          <header class="note__header clearfix">
+            <h1 class="note__title">
+              <a class="note__title-link" href="{{ page.url }}"><!--
+              --><time class="note__pubdate ion-ios-clock-outline">{{ page.date | split:" " | first }}</time><!--
+              --><span class="note__number ion-pound">{{ page.id | split:"/" | last }}</span><!--
+              --></a>
+            </h1>
+            <div class="note__link-area links">
+              <a class="links__link" title="blob" href="{{ site.repository }}/blob/master/{{ page.path | replace: '_amp/', '_posts/' }}"><!--
+              --><span class="ion-ios-paper"></span><!--
+              --></a>
+              <a class="links__link" title="history" href="{{ site.repository }}/commits/master/{{ page.path | replace: '_amp/', '_posts/' }}"><!--
+              --><span class="ion-ios-photos"></span><!--
+              --></a>
+              <a class="links__link" title="edit" href="{{ site.repository }}/edit/master/{{ page.path | replace: '_amp/', '_posts/' }}"><!--
+              --><span class="ion-edit"></span><!--
+              --></a>
+            </div>
+          </header>
+          <div class="note__content">{{ page.content }}</div>
+        </article>
 
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer__inner">
+    {% include footer.html %}
 
-        <div class="footer__copyright copyright">
-          <small class="copyright__text">
-            <a class="copyright__link" href="/">chocolateorange</a> © 2004 sasa+1
-          </small>
-        </div>
-
-      </div>
-    </footer>
   </body>
 </html>
