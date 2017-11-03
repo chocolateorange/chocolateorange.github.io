@@ -11,11 +11,6 @@ JSFLAGS := --colors --display-error-details --progress
 all: ## show targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: amp
-amp: ## generate AMP pages
-	amp "$$(npm prefix)"
-	bundle exec sass --load-path ./_sass --style compressed --scss _includes/amp/amp.scss | sed $$'1s/^\\xEF\\xBB\\xBF//' > _includes/amp/amp.css
-
 .PHONY: build
 build: ## build posts
 	bundle exec jekyll build
