@@ -17,6 +17,21 @@
       width: auto;
     }
 
+    .footer__search.search {
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .search__input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 2px 3px;
+
+        &::placeholder {
+          text-align: center;
+        }
+      }
+    }
+
     .footer__links.links {
       .links__list.list {
         list-style-type: none;

@@ -16,13 +16,13 @@
     }
 
     .note__inner {
-      border-left: 1px solid #ccf;
+      box-sizing: border-box;
       margin: 0 2rem;
 
       .note__header {
         border-bottom: 1px solid #ccf;
         display: flex;
-        padding: 0.3rem 0 0.3rem 0.8rem;
+        padding: 0 0 0.5rem 0;
 
         .note__title {
           margin: auto 0;
@@ -90,7 +90,7 @@
 
       .note__content {
         overflow: scroll;
-        padding: 0.8rem 0 0 0.8rem;
+        padding: 0.5rem 0 0 0;
 
         @include note;
 
