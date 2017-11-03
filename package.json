@@ -48,7 +48,6 @@
     "fallback-preload": "github:sasaplus1-prototype/fallback-preload.js"
   },
   "devDependencies": {
-    "amp": "file:local_modules/amp",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-lodash": "^3.2.11",
@@ -66,6 +65,7 @@
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-ignore-front-matter": "^0.1.0",
     "uglify-save-license": "^0.4.1",
+    "uncss": "^0.15.0",
     "webpack": "^2.2.1"
   },
   "engines": {
