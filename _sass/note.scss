@@ -89,7 +89,7 @@
   // or
   // {% highlight language %}
   // {% endhighlight %}
-  .highlight {
+  pre.highlight {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -125,5 +125,4 @@
     display: block;
     margin: 0 auto;
   }
-
 }
