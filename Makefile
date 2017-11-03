@@ -59,3 +59,14 @@ stylelint: ## lint stylesheets
 
 .PHONY: test
 test: eslint stylelint ## test for CI
+
+.PHONY: update-amp-cache
+update-amp-cache: prefix := https://cdn.ampproject.org/update-ping/c/s/chocolateorange.github.io
+update-amp-cache: ## update AMP cache within Google
+	find -L _amp -type f -exec basename {} + | sed -e 's|-|/|g' -e 's|.md$$||' | xargs -n 1 -I {} bash -c 'printf -- "%s\n" "$(prefix)/{}" && curl -X GET -i "$(prefix)/{}"'
+
+.PHONY: minify-amp-stylesheet
+minify-amp-stylesheet: URI1 := https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css
+minify-amp-stylesheet: URI2 := https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/fonts
+minify-amp-stylesheet: ## minify stylesheets for AMP
+	uncss --raw "$$(curl -L $(URI1))" './_site/amp/**/*.html' | sed -e 's|../fonts|$(URI2)|g' | grep -v 'Powered by AMP' > _sass/amp/ionicons.scss
