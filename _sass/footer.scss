@@ -55,14 +55,14 @@
               opacity: 0.6;
             }
 
-            &[href*="feed.xml"] {
+            &[href$="feed.xml"] {
               &:link,
               &:visited {
                 color: #fe9507;
               }
             }
 
-            &[href*="github"] {
+            &[href$="chocolateorange.github.io"] {
               &:link,
               &:visited {
                 color: #000;
