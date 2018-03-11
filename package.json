@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "fixpack": "^2.3.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0"
   },
@@ -8,6 +9,10 @@
     "npm": ">=5.6.0"
   },
   "lint-staged": {
+    "package.json": [
+      "fixpack",
+      "git diff --exit-code --quiet"
+    ]
   },
   "private": true,
   "scripts": {
