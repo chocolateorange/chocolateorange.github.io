@@ -15,6 +15,7 @@
     "npm": ">=5.6.0"
   },
   "lint-staged": {
+    "**/*.{js,vue}": "eslint",
     "package.json": [
       "fixpack",
       "git diff --exit-code --quiet"
