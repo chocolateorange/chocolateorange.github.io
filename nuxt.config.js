@@ -1,6 +1,7 @@
 module.exports = {
   generate: {
     dir: 'public',
+    fallback: true,
   },
   modules: [
     [
