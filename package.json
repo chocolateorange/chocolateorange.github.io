@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "axios": "^0.18.0",
     "eslint": "^4.18.2",
     "eslint-plugin-vue": "^4.3.0",
     "fixpack": "^2.3.1",

@@ -6,7 +6,7 @@ module.exports = {
   modules: [
     [
       'nuxt-blog', {
-        dirname: `${__dirname}/client/posts`,
+        dirname: `${__dirname}/client`,
       },
     ],
   ],
